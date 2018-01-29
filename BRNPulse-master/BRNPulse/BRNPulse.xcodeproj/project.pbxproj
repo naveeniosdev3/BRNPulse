@@ -12,6 +12,8 @@
 		DD0CB0AD20137AB900908A9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0CB0AB20137AB900908A9F /* Main.storyboard */; };
 		DD0CB0AF20137AB900908A9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0CB0AE20137AB900908A9F /* Assets.xcassets */; };
 		DD0CB0B220137AB900908A9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0CB0B020137AB900908A9F /* LaunchScreen.storyboard */; };
+		DD3C4DC5201F340300E11FB6 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */; };
+		DD3C4DC6201F340300E11FB6 /* AttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */; };
 		DD752C05201EE74800E4F8A2 /* MenuSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD752C04201EE74800E4F8A2 /* MenuSlider.swift */; };
 		DD752C07201EE77900E4F8A2 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD752C06201EE77900E4F8A2 /* SignInVC.swift */; };
 		DD752C09201EE7A400E4F8A2 /* DailyStatusUpdatae.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD752C08201EE7A400E4F8A2 /* DailyStatusUpdatae.swift */; };
@@ -43,6 +45,8 @@
 		DD0CB0AE20137AB900908A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD0CB0B120137AB900908A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD0CB0B320137AB900908A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
+		DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceCell.xib; sourceTree = "<group>"; };
 		DD752C04201EE74800E4F8A2 /* MenuSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSlider.swift; sourceTree = "<group>"; };
 		DD752C06201EE77900E4F8A2 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		DD752C08201EE7A400E4F8A2 /* DailyStatusUpdatae.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyStatusUpdatae.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				DD752C15201EE8BB00E4F8A2 /* leaveIcon.png */,
 				DD752C16201EE8BB00E4F8A2 /* login.png */,
 				DD752C17201EE8BB00E4F8A2 /* LogInImage.png */,
+				DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */,
+				DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */,
 				DD752C18201EE8BB00E4F8A2 /* logo.png */,
 				DD752C19201EE8BB00E4F8A2 /* requestIcon.png */,
 				DD752C1A201EE8BB00E4F8A2 /* searchIcon.png */,
@@ -212,6 +218,7 @@
 				DD752C27201EE8BB00E4F8A2 /* searchIcon.png in Resources */,
 				DD752C24201EE8BB00E4F8A2 /* LogInImage.png in Resources */,
 				DD752C22201EE8BB00E4F8A2 /* leaveIcon.png in Resources */,
+				DD3C4DC6201F340300E11FB6 /* AttendanceCell.xib in Resources */,
 				DD0CB0AF20137AB900908A9F /* Assets.xcassets in Resources */,
 				DD752C25201EE8BB00E4F8A2 /* logo.png in Resources */,
 				DD752C1E201EE8BB00E4F8A2 /* icons8-customer-40 (1).png in Resources */,
@@ -231,6 +238,7 @@
 				DD0CB0AA20137AB900908A9F /* ViewController.swift in Sources */,
 				DD752C0B201EE7B200E4F8A2 /* DataStore.swift in Sources */,
 				DD752C05201EE74800E4F8A2 /* MenuSlider.swift in Sources */,
+				DD3C4DC5201F340300E11FB6 /* AttendanceCell.swift in Sources */,
 				DD752C07201EE77900E4F8A2 /* SignInVC.swift in Sources */,
 				DD752C0D201EE7D100E4F8A2 /* CustomeTextField.swift in Sources */,
 				DD752C09201EE7A400E4F8A2 /* DailyStatusUpdatae.swift in Sources */,

@@ -31,7 +31,12 @@ class SignInVC: UIViewController {
     
     @IBAction func signUpEvent(_ sender: Any) {
         
-        dataGettingFromServer()
+        let multi = DispatchQueue(label: "one",qos:.userInitiated)
+        multi.async {
+            
+            self.dataGettingFromServer()
+        }
+        
         performSegue(withIdentifier: "toHome", sender: self)
         
     }
@@ -70,5 +75,7 @@ class SignInVC: UIViewController {
         dataTask?.resume()
         
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
 }

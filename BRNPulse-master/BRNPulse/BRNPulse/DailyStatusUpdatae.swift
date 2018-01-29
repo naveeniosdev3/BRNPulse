@@ -12,6 +12,8 @@ class DailyStatusUpdatae: UIViewController
 
 {
     
+   
+    @IBOutlet weak var attendanceTV: UITableView!
     var slideMenu : menuSlider?
     var some = true
    // var homeScreen : ViewController!

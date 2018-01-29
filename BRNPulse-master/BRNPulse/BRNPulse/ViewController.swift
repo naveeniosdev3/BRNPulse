@@ -8,18 +8,34 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    @IBOutlet weak var attendanceTV: UITableView!
     var slideMenu : menuSlider!
-    
+    var reqURL:URLRequest?
+    var sessionURL : URLSession?
+    var dataTask : URLSessionDataTask?
+    var allStore : [String:String]?
     var some = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.view.backgroundColor = UIColor.cyan
         self.slideMenu = self.storyboard?.instantiateViewController(withIdentifier: "menuSlider") as! menuSlider
+        
+        attendanceTV?.delegate = self
+        attendanceTV?.dataSource = self
+        //attendanceTV.register(AttendanceCell(), forCellReuseIdentifier: "abc")
+        let attendanceCellxib = UINib(nibName: "AttendanceCell", bundle: nil)
+        attendanceTV.register(attendanceCellxib, forCellReuseIdentifier: "abc")
+        
+        let multi = DispatchQueue(label: "some",qos:.utility)
+        multi.async {
+            
+            self.loadAttendanceDetails()
+        }
         
     }
     
@@ -81,6 +97,7 @@ class ViewController: UIViewController {
         self.some = true
     }
     
+
     @IBAction func swipeRight(_ sender: Any) {
         
         openMenu()
@@ -91,6 +108,60 @@ class ViewController: UIViewController {
         
         closeMenu()
     }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "abc", for: indexPath) as! AttendanceCell
+        
+        cell.subMenuLabel?.text = "Attendance"
+        cell.dataFromSerLBL?.text = "1234567890"
+        
+        return cell
+        
+    }
+    
+    
+    func loadAttendanceDetails(){
+        
+        let add = "http://www.brninfotech.com/pulse/modules/admin/DashboardSnippets.php"
+        sessionURL = URLSession(configuration: URLSessionConfiguration.default)
+        reqURL = URLRequest(url: URL(string: add)!)
+        
+        reqURL?.httpMethod = "POST"
+        
+       
+        
+        let dataToServer = "funcName=getUserAttendance&studentIDByAdmin=NoValue"
+        reqURL?.httpBody = dataToServer.data(using: .utf8)
+        dataTask = sessionURL?.dataTask(with: reqURL!, completionHandler: { (data, response, error) in
+            print(data!)
+            do{
+                let dataResult = try JSONSerialization.jsonObject(with: data!, options:[])
+                //print(dataResult)
+                
+                self.allStore = dataResult as? [String : String]
+               
+                print(dataResult)
+                //print(self.allStore!)
+            }catch{
+                
+                print("Something gone wrong")
+            }
+        })
+        dataTask?.resume()
+
+        
+    }
+    
+    
+    
     
 }
 

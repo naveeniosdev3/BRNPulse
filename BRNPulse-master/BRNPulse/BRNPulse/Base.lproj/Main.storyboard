@@ -21,8 +21,20 @@
                     <view key="view" contentMode="scaleToFill" id="a3r-Rj-AZ5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-AF-Txm">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1764705882352941" blue="0.1764705882352941" alpha="0.83390410958904104" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="fYb-AF-Txm" firstAttribute="top" secondItem="3lN-ub-nnt" secondAttribute="bottom" id="Ggn-jj-S75"/>
+                            <constraint firstItem="cYM-0J-cwJ" firstAttribute="top" secondItem="fYb-AF-Txm" secondAttribute="bottom" id="bIR-5Q-V6v"/>
+                            <constraint firstItem="fYb-AF-Txm" firstAttribute="leading" secondItem="a3r-Rj-AZ5" secondAttribute="leading" id="fwP-tO-efZ"/>
+                            <constraint firstAttribute="trailing" secondItem="fYb-AF-Txm" secondAttribute="trailing" id="mdE-ZJ-Hwb"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ero-Bj-ldp" appends="YES" id="TKp-i3-61k"/>
                             <outletCollection property="gestureRecognizers" destination="GUO-vA-JkB" appends="YES" id="eB9-b6-BpM"/>
@@ -36,6 +48,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="attendanceTV" destination="fYb-AF-Txm" id="KEg-cx-8Xh"/>
                         <outlet property="menuButton" destination="2bH-ec-mkv" id="MTA-OD-KLg"/>
                     </connections>
                 </viewController>
@@ -51,7 +64,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-232" y="280"/>
+            <point key="canvasLocation" x="-232.5" y="280"/>
         </scene>
         <!--Sign InVC-->
         <scene sceneID="c6i-k2-hfZ">
@@ -234,6 +247,13 @@
                     <view key="view" contentMode="scaleToFill" id="XqL-Z5-BD8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H1G-Pr-hFO">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="jFa-O6-Og1">
@@ -243,10 +263,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="attendanceTV" destination="H1G-Pr-hFO" id="8ZB-Hn-WgU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1L2-LL-VWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="1035"/>
+            <point key="canvasLocation" x="-234.375" y="1035"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Pgw-RL-jPh">
@@ -299,7 +322,7 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNK-XN-T2L">
                                 <rect key="frame" x="0.0" y="197.5" width="220" height="282.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FjY-s6-Clq">
-                                    <rect key="frame" x="0.0" y="0.0" width="220" height="282.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="220" height="283"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cPl-t8-bvc">

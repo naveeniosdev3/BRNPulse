@@ -14,6 +14,8 @@ class AttendanceCell: UITableViewCell {
     @IBOutlet weak var subMenuLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //self.frame.size.height = 60
         // Initialization code
     }
 

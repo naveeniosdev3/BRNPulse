@@ -29,11 +29,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //self.view.backgroundColor = UIColor.cyan
         self.slideMenu = self.storyboard?.instantiateViewController(withIdentifier: "menuSlider") as! menuSlider
         
-        attendanceTV?.delegate = self
-        attendanceTV?.dataSource = self
-        //attendanceTV.register(AttendanceCell(), forCellReuseIdentifier: "abc")
-        let attendanceCellxib = UINib(nibName: "AttendanceCell", bundle: nil)
-        attendanceTV.register(attendanceCellxib, forCellReuseIdentifier: "abc")
+        tableViewElements()
         
         let multi = DispatchQueue(label: "some",qos:.utility)
         multi.async {
@@ -45,7 +41,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             
         }
         
+        print("from view did load \(attendanceSumDetails)")
     }
+    
+    func tableViewElements(){
+        
+        attendanceTV?.delegate = self
+        attendanceTV?.dataSource = self
+        //attendanceTV.register(AttendanceCell(), forCellReuseIdentifier: "abc")
+        let attendanceCellxib = UINib(nibName: "AttendanceCell", bundle: nil)
+        attendanceTV.register(attendanceCellxib, forCellReuseIdentifier: "abc")
+    }
+    
     func panGestureMethod(sender: UIPanGestureRecognizer){
         
         let velocity = sender.velocity(in: self.view)
@@ -81,7 +88,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func openMenu(){
         
-        UIView.animate(withDuration: 0.6) { ()->Void in
+        UIView.animate(withDuration: 1) { ()->Void in
             
             self.slideMenu?.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
             //           self.view.frame = CGRect(x: (self.slideMenu?.view.frame.size.width)!-50, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
@@ -99,7 +106,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     func closeMenu(){
         
-        UIView.animate(withDuration: 0.6, animations: { ()->Void in
+        UIView.animate(withDuration: 1, animations: { ()->Void in
             
             self.slideMenu?.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
             // self.view.frame = CGRect(x: 0, y: 60, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
@@ -172,10 +179,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 print(dStore)
             
                 print("from dictionary\(String(describing: dicStoreAttendance["totalDays"]))")
-                
-                
-                
-                
+
                 self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalDays"]!))
                 self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalWorkingDays"]))
                 self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalLeaves"]))

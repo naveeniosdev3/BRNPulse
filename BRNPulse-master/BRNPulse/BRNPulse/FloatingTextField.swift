@@ -33,6 +33,64 @@ import UIKit
         }
     }
     
+    //////////////my own
+    
+    
+    @IBInspectable var cornerRadius : CGFloat=0{
+        didSet{
+            layer.cornerRadius = cornerRadius
+        }
+        
+    }
+    
+    @IBInspectable var rightImage : UIImage?{
+        didSet{
+            updateView()
+        }
+    }
+    
+    func updateView(){
+        var width = rightPadding+20
+        if let image = rightImage{
+            
+            let imageView = UIImageView(frame: CGRect(x:rightPadding, y:2, width:20, height:20))
+            rightViewMode = .always
+            
+            imageView.image = image
+            imageView.image = image.withRenderingMode(.alwaysTemplate)
+            let view = UIView(frame: CGRect(x:40, y:0, width:25, height:25))
+            view.addSubview(imageView)
+            //width = leftPadding+20
+            rightView = view
+            imageView.tintColor = tintColor
+        }
+        else{
+            rightViewMode = .never
+        }
+        
+        if borderStyle == UITextBorderStyle.none{
+            width = width+5
+        }
+        
+    }
+    
+    @IBInspectable var rightPadding : CGFloat = 0
+        {
+        didSet{
+            updateView()
+        }
+    }
+//    @IBInspectable var placeHolderColor : UIColor = UIColor.lightGray{
+//        didSet {
+//            setValue(placeHolderColor, forKeyPath: "_placeholderLabel.textColor")
+//        }
+//    }
+
+    
+    
+    
+    ///////////////////
+    
     /// Change line color when Editing in textfield
     @IBInspectable open var selectedLineColor : UIColor = UIColor(red: 19/256.0, green: 141/256.0, blue: 117/256.0, alpha: 1.0){
         didSet{

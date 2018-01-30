@@ -13,6 +13,8 @@ class SignInVC: UIViewController {
     @IBOutlet weak var passwordTF: ACFloatingTextfield!
     @IBOutlet weak var userNameTF: ACFloatingTextfield!
     
+    var logKnow = String()
+    
     var reqURL:URLRequest?
     var sessionURL : URLSession?
     var dataTask : URLSessionDataTask?
@@ -31,14 +33,20 @@ class SignInVC: UIViewController {
     
     @IBAction func signUpEvent(_ sender: Any) {
         
-        let multi = DispatchQueue(label: "one",qos:.userInitiated)
-        multi.async {
-            
+//        let multi = DispatchQueue(label: "one",qos:.userInitiated)
+//        multi.async {
+        
             self.dataGettingFromServer()
-        }
-        
+            print(self.logKnow)
+        //}
+        if self.logKnow == "yes"{
         performSegue(withIdentifier: "toHome", sender: self)
-        
+
+        }else{
+            
+            print("Not Logged In")
+            //self.loadAttendanceDetails()
+        }
     }
     func dataGettingFromServer(){
         
@@ -67,6 +75,10 @@ class SignInVC: UIViewController {
                 DataStore.dStore(data: (self.allStore?["surName"])!)
                 //print(self.sName!)
                 print(self.allStore!)
+                
+                self.logKnow = (self.allStore?["loggedIn"])!
+                
+                
             }catch{
                 
                 print("Something gone wrong")
@@ -78,4 +90,6 @@ class SignInVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
     }
+    
+    
 }

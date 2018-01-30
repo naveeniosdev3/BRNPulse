@@ -12,6 +12,10 @@
 		DD0CB0AD20137AB900908A9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0CB0AB20137AB900908A9F /* Main.storyboard */; };
 		DD0CB0AF20137AB900908A9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0CB0AE20137AB900908A9F /* Assets.xcassets */; };
 		DD0CB0B220137AB900908A9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0CB0B020137AB900908A9F /* LaunchScreen.storyboard */; };
+		DD1E040820208FBB00946831 /* ForAttendanceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E040720208FBB00946831 /* ForAttendanceStore.swift */; };
+		DD1E040A2020B80800946831 /* pexels-photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E04092020B80800946831 /* pexels-photo.jpg */; };
+		DD1E040C2020B81000946831 /* pexels-photo-399161.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E040B2020B81000946831 /* pexels-photo-399161.jpeg */; };
+		DD1E040E2020B88A00946831 /* pexels-photo-303383.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E040D2020B88A00946831 /* pexels-photo-303383.jpeg */; };
 		DD3C4DC5201F340300E11FB6 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */; };
 		DD3C4DC6201F340300E11FB6 /* AttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */; };
 		DD68BF0520203E9300D1B240 /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = DD68BF0320203E9300D1B240 /* signUp.png */; };
@@ -53,6 +57,10 @@
 		DD0CB0AE20137AB900908A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD0CB0B120137AB900908A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD0CB0B320137AB900908A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD1E040720208FBB00946831 /* ForAttendanceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForAttendanceStore.swift; sourceTree = "<group>"; };
+		DD1E04092020B80800946831 /* pexels-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo.jpg"; sourceTree = "<group>"; };
+		DD1E040B2020B81000946831 /* pexels-photo-399161.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo-399161.jpeg"; sourceTree = "<group>"; };
+		DD1E040D2020B88A00946831 /* pexels-photo-303383.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo-303383.jpeg"; sourceTree = "<group>"; };
 		DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
 		DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceCell.xib; sourceTree = "<group>"; };
 		DD68BF0320203E9300D1B240 /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
@@ -124,16 +132,22 @@
 				DD752C08201EE7A400E4F8A2 /* DailyStatusUpdatae.swift */,
 				DD752C2C201EE93F00E4F8A2 /* Model */,
 				DD0CB0AE20137AB900908A9F /* Assets.xcassets */,
-				DD752C10201EE8BB00E4F8A2 /* homeIcon.png */,
-				DD68BF112020489C00D1B240 /* eICon1.png */,
-				DD68BF0B2020445B00D1B240 /* passwordIcon.png */,
-				DD68BF0C2020445B00D1B240 /* emailIcon.png */,
 				DD752C2D201EEE5B00E4F8A2 /* StatusNavigation.swift */,
+				DD752C31201EF4AD00E4F8A2 /* HomeScreenNavigation.swift */,
+				DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */,
+				DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */,
+				DD752C2A201EE8FF00E4F8A2 /* TextFieldsCustom */,
+				DD68BF112020489C00D1B240 /* eICon1.png */,
+				DD1E040D2020B88A00946831 /* pexels-photo-303383.jpeg */,
+				DD68BF0B2020445B00D1B240 /* passwordIcon.png */,
+				DD752C10201EE8BB00E4F8A2 /* homeIcon.png */,
+				DD1E04092020B80800946831 /* pexels-photo.jpg */,
+				DD1E040B2020B81000946831 /* pexels-photo-399161.jpeg */,
+				DD68BF0C2020445B00D1B240 /* emailIcon.png */,
 				DD752C11201EE8BB00E4F8A2 /* icons8-customer-40 (1).png */,
 				DD68BF0720203FB900D1B240 /* sign-up.png */,
 				DD68BF0F2020484800D1B240 /* emailIcon1.png */,
 				DD68BF0820203FB900D1B240 /* signup1.png */,
-				DD752C31201EF4AD00E4F8A2 /* HomeScreenNavigation.swift */,
 				DD752C12201EE8BB00E4F8A2 /* icons8-customer-40.png */,
 				DD752C13201EE8BB00E4F8A2 /* icons8-delete-30.png */,
 				DD752C14201EE8BB00E4F8A2 /* icons8-menu-30.png */,
@@ -142,13 +156,10 @@
 				DD68BF0420203E9300D1B240 /* signUpText.png */,
 				DD752C16201EE8BB00E4F8A2 /* login.png */,
 				DD752C17201EE8BB00E4F8A2 /* LogInImage.png */,
-				DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */,
-				DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */,
 				DD752C18201EE8BB00E4F8A2 /* logo.png */,
 				DD752C19201EE8BB00E4F8A2 /* requestIcon.png */,
 				DD752C1A201EE8BB00E4F8A2 /* searchIcon.png */,
 				DD752C1B201EE8BB00E4F8A2 /* student.jpeg */,
-				DD752C2A201EE8FF00E4F8A2 /* TextFieldsCustom */,
 				DD752C1C201EE8BB00E4F8A2 /* updateIcon.png */,
 				DD0CB0B020137AB900908A9F /* LaunchScreen.storyboard */,
 				DD0CB0B320137AB900908A9F /* Info.plist */,
@@ -169,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				DD752C0A201EE7B200E4F8A2 /* DataStore.swift */,
+				DD1E040720208FBB00946831 /* ForAttendanceStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -234,6 +246,7 @@
 			files = (
 				DD0CB0B220137AB900908A9F /* LaunchScreen.storyboard in Resources */,
 				DD752C23201EE8BB00E4F8A2 /* login.png in Resources */,
+				DD1E040C2020B81000946831 /* pexels-photo-399161.jpeg in Resources */,
 				DD752C1F201EE8BB00E4F8A2 /* icons8-customer-40.png in Resources */,
 				DD68BF102020484800D1B240 /* emailIcon1.png in Resources */,
 				DD68BF0D2020445B00D1B240 /* passwordIcon.png in Resources */,
@@ -243,6 +256,8 @@
 				DD68BF122020489C00D1B240 /* eICon1.png in Resources */,
 				DD752C1D201EE8BB00E4F8A2 /* homeIcon.png in Resources */,
 				DD68BF0A20203FB900D1B240 /* signup1.png in Resources */,
+				DD1E040A2020B80800946831 /* pexels-photo.jpg in Resources */,
+				DD1E040E2020B88A00946831 /* pexels-photo-303383.jpeg in Resources */,
 				DD752C26201EE8BB00E4F8A2 /* requestIcon.png in Resources */,
 				DD752C21201EE8BB00E4F8A2 /* icons8-menu-30.png in Resources */,
 				DD752C27201EE8BB00E4F8A2 /* searchIcon.png in Resources */,
@@ -277,6 +292,7 @@
 				DD752C32201EF4AD00E4F8A2 /* HomeScreenNavigation.swift in Sources */,
 				DD0CB0A820137AB900908A9F /* AppDelegate.swift in Sources */,
 				DD752C0F201EE7E600E4F8A2 /* FloatingTextField.swift in Sources */,
+				DD1E040820208FBB00946831 /* ForAttendanceStore.swift in Sources */,
 				DD752C2E201EEE5B00E4F8A2 /* StatusNavigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

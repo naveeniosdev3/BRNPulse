@@ -19,10 +19,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var dataTask : URLSessionDataTask?
     var allStore : [String:String]?
     var some = true
-    
+    var attendanceSumDetails : Array< String > = Array < String >()
     let subMArr = ["Total Days","Working Days","Leaves","Absents","Days Attend","Updates Sent","Working Hours","Worked Hours","Overall Spent Summary","Worked Per day(Avg.Hrs)","Shortage Per day(Avg.Hrs)","Late to Office","Minimum Hrs Missed","Max Points","Points Earned","Your Performance Score"]
-    
-    var attendanceSumDetails = Array<String>()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +30,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         tableViewElements()
         
-        let multi = DispatchQueue(label: "some",qos:.utility)
-        multi.async {
-            
+//        let multi = DispatchQueue(label: "some",qos:.userInitiated)
+//        multi.async {
+        
             self.loadAttendanceDetails()
             
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGestureMethod(sender:)))
             self.view.addGestureRecognizer(panGesture)
             
-        }
+        //}
         
-        print("from view did load \(attendanceSumDetails)")
+        
+        //print("from view did load \(attendanceSumDetails)")
     }
     
     func tableViewElements(){
@@ -167,16 +167,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             print(data!)
             do{
                 let dataResult = try JSONSerialization.jsonObject(with: data!, options:[])
-                //print(dataResult)
+                print("FromDataStore \(dataResult)")
                 
                // self.allStore = dataResult as! [String : String]
                let dStore = dataResult as! [Any]
                 //print(dataResult["totalWorkingDays"])
                 
                 let dicStoreAttendance:Dictionary = dStore[0] as![String:Any]
-                print(dStore[0])
+                //print(dStore[0])
                 print("\n-----------------------------------")
-                print(dStore)
+                //print(dStore)
             
                 print("from dictionary\(String(describing: dicStoreAttendance["totalDays"]))")
 
@@ -196,15 +196,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 self.attendanceSumDetails.append(String(describing: dicStoreAttendance["maxPoints"]))
                 self.attendanceSumDetails.append(String(describing: dicStoreAttendance["pointsScored"]))
                 self.attendanceSumDetails.append(String(describing: dicStoreAttendance["avgEfforts"]))
-                               
+                
+                ForAttendanceStore.attendanceSummaryDetailsArr = self.attendanceSumDetails
+                print(self.attendanceSumDetails)
                 //print(self.allStore![0])
             }catch{
                 
                 print("Something gone wrong")
             }
         })
+        
         dataTask?.resume()
-
+        do_table_refresh()
         
     }
     
@@ -214,19 +217,33 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "abc", for: indexPath) as! AttendanceCell
         
-        cell.subMenuLabel?.text = subMArr[indexPath.row]
-        //cell.dataFromSerLBL?.text = attendanceSumDetails[indexPath.row]
-        
-        print("sM.count\(subMArr.count)")
-        print("atte.count\(attendanceSumDetails.count)")
-        
+        cell.frame.size.width = UIScreen.main.bounds.size.width
+        DispatchQueue.main.async {
+        //let  some:String? = ForAttendanceStore.attendanceSummaryDetailsArr[0]
+        cell.subMenuLabel?.text = self.subMArr[indexPath.row]
+       // cell.dataFromSerLBL?.text = self.attendanceSumDetails[indexPath.row]
+          
+        print("For Atten Class Store\(self.attendanceSumDetails)")
+        print("sM.count\(self.subMArr.count)")
+       // print("atte.count\(attendanceSumDetails.count)")
+        }
         return cell
         
     }
     
     
-
+    override func viewDidAppear(_ animated: Bool) {
+               
+        print("For Atten Class Store\(ForAttendanceStore.attendanceSummaryDetailsArr)")
+    }
     
+    func do_table_refresh()
+    {
+        DispatchQueue.main.async(execute: {
+            self.attendanceTV.reloadData()
+            return
+        })
+    }
     
 }
 

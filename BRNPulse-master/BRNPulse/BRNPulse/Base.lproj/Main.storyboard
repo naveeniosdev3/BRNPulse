@@ -23,14 +23,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-AF-Txm">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="-1" width="320" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1764705882352941" blue="0.1764705882352941" alpha="0.83390410958904104" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="fYb-AF-Txm" firstAttribute="top" secondItem="3lN-ub-nnt" secondAttribute="bottom" id="Ggn-jj-S75"/>
+                            <constraint firstItem="fYb-AF-Txm" firstAttribute="top" secondItem="3lN-ub-nnt" secondAttribute="bottom" constant="-65" id="Ggn-jj-S75"/>
                             <constraint firstItem="cYM-0J-cwJ" firstAttribute="top" secondItem="fYb-AF-Txm" secondAttribute="bottom" id="bIR-5Q-V6v"/>
                             <constraint firstItem="fYb-AF-Txm" firstAttribute="leading" secondItem="a3r-Rj-AZ5" secondAttribute="leading" id="fwP-tO-efZ"/>
                             <constraint firstAttribute="trailing" secondItem="fYb-AF-Txm" secondAttribute="trailing" id="mdE-ZJ-Hwb"/>
@@ -75,22 +75,22 @@
                         <viewControllerLayoutGuide type="bottom" id="X2u-ea-5Cd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dPk-3q-qVq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-ia-rbh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-303383.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-ia-rbh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                             </imageView>
-                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qv-tE-ACg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qv-tE-ACg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fg5-IZ-EY3">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mY-py-BwY">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                        <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mY-py-BwY">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jLh-ck-lpP">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QkR-bK-W17">
@@ -112,61 +112,242 @@
                                                         </constraints>
                                                     </stackView>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFw-Rc-Tan">
-                                                        <rect key="frame" x="0.0" y="125" width="320" height="325"/>
+                                                        <rect key="frame" x="0.0" y="125" width="320" height="845"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ugt-L7-Z3k">
-                                                                <rect key="frame" x="15" y="12" width="290" height="300"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zEh-Ed-nrv">
+                                                                <rect key="frame" x="5" y="483" width="310" height="250"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yt-Bv-5Je" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your account details below :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-At-zGG">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="310" height="62.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-wP-9ga" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="62.5" width="310" height="62.5"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </textField>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="396-KT-7ub" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="50" width="290" height="50"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVr-gR-xum" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="125" width="310" height="62.5"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </textField>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-zh-hcY" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="100" width="290" height="50"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Type Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d35-Ti-o2B" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="187.5" width="310" height="62.5"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits"/>
-                                                                    </textField>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftU-LP-63c" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="150" width="290" height="50"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                    </textField>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Town" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yc2-nq-d39" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="200" width="290" height="50"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                    </textField>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ISH-hB-Z46" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="250" width="290" height="50"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="250" id="Ssr-TF-ZbC"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jh7-Hs-OqH">
+                                                                <rect key="frame" x="35" y="768" width="250" height="110"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBW-hV-08V">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="52.5"/>
+                                                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <state key="normal" title="Submit"/>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MS8-qK-sPa">
+                                                                        <rect key="frame" x="0.0" y="57.5" width="250" height="52.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                                        <state key="normal" title="Log In">
+                                                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="250" id="3Sv-rz-gwc"/>
+                                                                    <constraint firstAttribute="height" constant="110" id="aPq-pj-Xgi"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7V8-JG-NEP">
+                                                                <rect key="frame" x="5" y="20" width="310" height="300"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yt-Bv-5Je" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="396-KT-7ub" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="50" width="310" height="50"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-zh-hcY" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="100" width="310" height="50"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftU-LP-63c" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="150" width="310" height="50"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Town" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yc2-nq-d39" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="200" width="310" height="50"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ISH-hB-Z46" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="250" width="310" height="50"/>
+                                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                                                <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="300" id="eZg-Pv-Mn2"/>
+                                                                    <constraint firstAttribute="width" constant="310" id="tcQ-Jc-W4c"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WwQ-Cf-EQh">
+                                                                <rect key="frame" x="5" y="345" width="115" height="130"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OwT-si-zND">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="100"/>
+                                                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2s-04-2J2">
+                                                                        <rect key="frame" x="0.0" y="100" width="89" height="30"/>
+                                                                        <state key="normal" title="Select Image"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="115" id="Xqk-ty-VOM"/>
+                                                                    <constraint firstAttribute="height" constant="130" id="ZsJ-Zg-ghf"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="OwT-si-zND" secondAttribute="trailing" id="ghf-6h-N0X"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="ugt-L7-Z3k" firstAttribute="centerY" secondItem="WFw-Rc-Tan" secondAttribute="centerY" id="3jd-M3-8Nd"/>
-                                                            <constraint firstItem="ugt-L7-Z3k" firstAttribute="leading" secondItem="WFw-Rc-Tan" secondAttribute="leading" constant="15" id="4Fz-qo-HYK"/>
-                                                            <constraint firstItem="ugt-L7-Z3k" firstAttribute="top" secondItem="WFw-Rc-Tan" secondAttribute="top" constant="12" id="SH8-Vf-Ue0"/>
-                                                            <constraint firstItem="ugt-L7-Z3k" firstAttribute="centerX" secondItem="WFw-Rc-Tan" secondAttribute="centerX" id="Sf9-CG-0D8"/>
-                                                            <constraint firstAttribute="bottom" secondItem="ugt-L7-Z3k" secondAttribute="bottom" constant="13" id="nSG-Ap-NlL"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ugt-L7-Z3k" secondAttribute="trailing" constant="15" id="pcL-5h-pZC"/>
+                                                            <constraint firstItem="7V8-JG-NEP" firstAttribute="top" secondItem="WFw-Rc-Tan" secondAttribute="top" constant="20" id="4fJ-QD-bor"/>
+                                                            <constraint firstItem="7V8-JG-NEP" firstAttribute="leading" secondItem="WwQ-Cf-EQh" secondAttribute="trailing" constant="-115" id="Doo-0X-cHS"/>
+                                                            <constraint firstItem="jh7-Hs-OqH" firstAttribute="centerX" secondItem="zEh-Ed-nrv" secondAttribute="centerX" id="Hdm-7Z-ykB"/>
+                                                            <constraint firstItem="zEh-Ed-nrv" firstAttribute="top" secondItem="WwQ-Cf-EQh" secondAttribute="bottom" constant="8" id="Rmw-vM-0bE"/>
+                                                            <constraint firstItem="WwQ-Cf-EQh" firstAttribute="top" secondItem="7V8-JG-NEP" secondAttribute="bottom" constant="25" id="Wd6-Hb-vcX"/>
+                                                            <constraint firstItem="7V8-JG-NEP" firstAttribute="centerX" secondItem="WFw-Rc-Tan" secondAttribute="centerX" id="YAf-cN-OZd"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jh7-Hs-OqH" secondAttribute="trailing" constant="35" id="YIb-H1-lXE"/>
+                                                            <constraint firstItem="jh7-Hs-OqH" firstAttribute="top" secondItem="zEh-Ed-nrv" secondAttribute="bottom" constant="35" id="aXU-py-5dH"/>
+                                                            <constraint firstItem="zEh-Ed-nrv" firstAttribute="centerX" secondItem="WFw-Rc-Tan" secondAttribute="centerX" id="fjw-U6-4DJ"/>
+                                                            <constraint firstItem="zEh-Ed-nrv" firstAttribute="width" secondItem="7V8-JG-NEP" secondAttribute="width" id="l02-I0-n9v"/>
+                                                            <constraint firstAttribute="bottom" secondItem="jh7-Hs-OqH" secondAttribute="bottom" constant="77" id="tfx-DK-Eik"/>
                                                         </constraints>
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016 © BRN Infotech Pvt. Ltd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAh-Qg-VcM">
-                                                        <rect key="frame" x="45" y="456" width="230" height="20"/>
+                                                        <rect key="frame" x="45" y="976" width="230" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="230" id="gHy-Ji-oEN"/>
                                                             <constraint firstAttribute="height" constant="20" id="vFC-JH-vNc"/>
@@ -215,6 +396,8 @@
                             <constraint firstItem="X2u-ea-5Cd" firstAttribute="top" secondItem="ahp-ia-rbh" secondAttribute="bottom" id="waw-ZR-sF9"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7o-Kt-9CJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -400,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7b2-It-sWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1813.0434782608697" y="278.804347826087"/>
+            <point key="canvasLocation" x="-1828" y="494"/>
         </scene>
         <!--Daily Status Updatae-->
         <scene sceneID="iHq-Yy-lxv">
@@ -579,7 +762,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6X-6W-896" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1813" y="1056"/>
+            <point key="canvasLocation" x="-1828" y="1229"/>
         </scene>
         <!--Home Screen Navigation-->
         <scene sceneID="gzM-3q-VIc">
@@ -598,7 +781,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAq-dv-mIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-978" y="280"/>
+            <point key="canvasLocation" x="-1022" y="494"/>
         </scene>
     </scenes>
     <resources>
@@ -607,6 +790,7 @@
         <image name="login.png" width="512" height="512"/>
         <image name="logo.png" width="374" height="326"/>
         <image name="passwordIcon.png" width="512" height="512"/>
+        <image name="pexels-photo-303383.jpeg" width="4923" height="3285"/>
         <image name="student.jpeg" width="230" height="219"/>
     </resources>
 </document>

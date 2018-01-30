@@ -96,10 +96,10 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QkR-bK-W17">
                                                         <rect key="frame" x="55" y="10" width="210" height="110"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="VFz-01-Bq8">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="VFz-01-Bq8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="88.5"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Register Your Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbx-yl-x8X">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register Your Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbx-yl-x8X">
                                                                 <rect key="frame" x="15.5" y="88.5" width="179.5" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -111,14 +111,80 @@
                                                             <constraint firstAttribute="width" constant="210" id="oTI-ip-Pb3"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFw-Rc-Tan">
-                                                        <rect key="frame" x="0.0" y="123" width="320" height="357"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFw-Rc-Tan">
+                                                        <rect key="frame" x="0.0" y="125" width="320" height="325"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ugt-L7-Z3k">
+                                                                <rect key="frame" x="15" y="12" width="290" height="300"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yt-Bv-5Je" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="396-KT-7ub" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="50" width="290" height="50"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-zh-hcY" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="100" width="290" height="50"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftU-LP-63c" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="150" width="290" height="50"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Town" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yc2-nq-d39" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="200" width="290" height="50"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ISH-hB-Z46" customClass="ACFloatingTextfield" customModule="BRNPulse" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="250" width="290" height="50"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="ugt-L7-Z3k" firstAttribute="centerY" secondItem="WFw-Rc-Tan" secondAttribute="centerY" id="3jd-M3-8Nd"/>
+                                                            <constraint firstItem="ugt-L7-Z3k" firstAttribute="leading" secondItem="WFw-Rc-Tan" secondAttribute="leading" constant="15" id="4Fz-qo-HYK"/>
+                                                            <constraint firstItem="ugt-L7-Z3k" firstAttribute="top" secondItem="WFw-Rc-Tan" secondAttribute="top" constant="12" id="SH8-Vf-Ue0"/>
+                                                            <constraint firstItem="ugt-L7-Z3k" firstAttribute="centerX" secondItem="WFw-Rc-Tan" secondAttribute="centerX" id="Sf9-CG-0D8"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ugt-L7-Z3k" secondAttribute="bottom" constant="13" id="nSG-Ap-NlL"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ugt-L7-Z3k" secondAttribute="trailing" constant="15" id="pcL-5h-pZC"/>
+                                                        </constraints>
                                                     </scrollView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016 © BRN Infotech Pvt. Ltd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAh-Qg-VcM">
+                                                        <rect key="frame" x="45" y="456" width="230" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="230" id="gHy-Ji-oEN"/>
+                                                            <constraint firstAttribute="height" constant="20" id="vFC-JH-vNc"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="WFw-Rc-Tan" firstAttribute="leading" secondItem="jLh-ck-lpP" secondAttribute="leading" id="92D-Ze-J93"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WFw-Rc-Tan" secondAttribute="bottom" constant="30" id="Cqc-67-li6"/>
+                                                    <constraint firstItem="WFw-Rc-Tan" firstAttribute="top" secondItem="QkR-bK-W17" secondAttribute="bottom" constant="5" id="DIx-8X-7MZ"/>
+                                                    <constraint firstItem="JAh-Qg-VcM" firstAttribute="centerX" secondItem="jLh-ck-lpP" secondAttribute="centerX" id="NBm-7r-lR2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JAh-Qg-VcM" secondAttribute="bottom" constant="4" id="cIa-iA-Uhq"/>
                                                     <constraint firstItem="QkR-bK-W17" firstAttribute="top" secondItem="jLh-ck-lpP" secondAttribute="top" constant="10" id="nN0-OF-CKb"/>
                                                     <constraint firstItem="QkR-bK-W17" firstAttribute="centerX" secondItem="jLh-ck-lpP" secondAttribute="centerX" id="uYE-0l-nIG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WFw-Rc-Tan" secondAttribute="trailing" id="vIb-oF-y5X"/>
                                                 </constraints>
                                             </view>
                                             <vibrancyEffect>

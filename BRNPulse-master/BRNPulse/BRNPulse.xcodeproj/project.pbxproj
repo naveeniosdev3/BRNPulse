@@ -16,6 +16,7 @@
 		DD1E040A2020B80800946831 /* pexels-photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E04092020B80800946831 /* pexels-photo.jpg */; };
 		DD1E040C2020B81000946831 /* pexels-photo-399161.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E040B2020B81000946831 /* pexels-photo-399161.jpeg */; };
 		DD1E040E2020B88A00946831 /* pexels-photo-303383.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E040D2020B88A00946831 /* pexels-photo-303383.jpeg */; };
+		DD1E04102020C12A00946831 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E040F2020C12A00946831 /* ParentViewController.swift */; };
 		DD3C4DC5201F340300E11FB6 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */; };
 		DD3C4DC6201F340300E11FB6 /* AttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */; };
 		DD68BF0520203E9300D1B240 /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = DD68BF0320203E9300D1B240 /* signUp.png */; };
@@ -61,6 +62,7 @@
 		DD1E04092020B80800946831 /* pexels-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo.jpg"; sourceTree = "<group>"; };
 		DD1E040B2020B81000946831 /* pexels-photo-399161.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo-399161.jpeg"; sourceTree = "<group>"; };
 		DD1E040D2020B88A00946831 /* pexels-photo-303383.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo-303383.jpeg"; sourceTree = "<group>"; };
+		DD1E040F2020C12A00946831 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
 		DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceCell.xib; sourceTree = "<group>"; };
 		DD68BF0320203E9300D1B240 /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0CB0A720137AB900908A9F /* AppDelegate.swift */,
+				DD1E040F2020C12A00946831 /* ParentViewController.swift */,
 				DD0CB0A920137AB900908A9F /* ViewController.swift */,
 				DD752C04201EE74800E4F8A2 /* MenuSlider.swift */,
 				DD0CB0AB20137AB900908A9F /* Main.storyboard */,
@@ -290,6 +293,7 @@
 				DD752C0D201EE7D100E4F8A2 /* CustomeTextField.swift in Sources */,
 				DD752C09201EE7A400E4F8A2 /* DailyStatusUpdatae.swift in Sources */,
 				DD752C32201EF4AD00E4F8A2 /* HomeScreenNavigation.swift in Sources */,
+				DD1E04102020C12A00946831 /* ParentViewController.swift in Sources */,
 				DD0CB0A820137AB900908A9F /* AppDelegate.swift in Sources */,
 				DD752C0F201EE7E600E4F8A2 /* FloatingTextField.swift in Sources */,
 				DD1E040820208FBB00946831 /* ForAttendanceStore.swift in Sources */,

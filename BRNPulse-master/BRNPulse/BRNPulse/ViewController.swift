@@ -17,7 +17,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var reqURL:URLRequest?
     var sessionURL : URLSession?
     var dataTask : URLSessionDataTask?
-    var allStore : [String:String]?
+    var allStore = [Any]()
     var some = true
     var attendanceSumDetails : Array< String > = Array < String >()
     let subMArr = ["Total Days","Working Days","Leaves","Absents","Days Attend","Updates Sent","Working Hours","Worked Hours","Overall Spent Summary","Worked Per day(Avg.Hrs)","Shortage Per day(Avg.Hrs)","Late to Office","Minimum Hrs Missed","Max Points","Points Earned","Your Performance Score"]
@@ -25,32 +25,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.backgroundColor = UIColor.cyan
+        
         self.slideMenu = self.storyboard?.instantiateViewController(withIdentifier: "menuSlider") as! menuSlider
-        
-        tableViewElements()
-        
-//        let multi = DispatchQueue(label: "some",qos:.userInitiated)
-//        multi.async {
-        
-            self.loadAttendanceDetails()
+        self.loadAttendanceDetails()
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGestureMethod(sender:)))
+        self.view.addGestureRecognizer(panGesture)
             
-            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGestureMethod(sender:)))
-            self.view.addGestureRecognizer(panGesture)
-            
-        //}
-        
-        
-        //print("from view did load \(attendanceSumDetails)")
-    }
+        }
     
     func tableViewElements(){
         
-        attendanceTV?.delegate = self
-        attendanceTV?.dataSource = self
+        self.attendanceTV?.delegate = self
+        self.attendanceTV?.dataSource = self
         //attendanceTV.register(AttendanceCell(), forCellReuseIdentifier: "abc")
         let attendanceCellxib = UINib(nibName: "AttendanceCell", bundle: nil)
         attendanceTV.register(attendanceCellxib, forCellReuseIdentifier: "abc")
+        self.attendanceTV.reloadData()
     }
     
     func panGestureMethod(sender: UIPanGestureRecognizer){
@@ -172,78 +162,103 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                // self.allStore = dataResult as! [String : String]
                let dStore = dataResult as! [Any]
                 //print(dataResult["totalWorkingDays"])
-                
+                self.allStore = dataResult as! [Any]
                 let dicStoreAttendance:Dictionary = dStore[0] as![String:Any]
-                //print(dStore[0])
+                print("\n-----------------------------------")
+                print("Frome Data Store : \(dStore[1])")
                 print("\n-----------------------------------")
                 //print(dStore)
-            
+                
+                let some1:[String:Any] = dStore[1] as! [String : Any]
+                
+                print("All Keys:----->>>>\(some1.keys)")
+                
                 print("from dictionary\(String(describing: dicStoreAttendance["totalDays"]))")
 
                 self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalDays"]!))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalWorkingDays"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalLeaves"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalAbsents"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalDaysAttended"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalUpdatesSent"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalWorkingHours"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalWorkedHours"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["avgWorkingHours"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["avgWorkingHours"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["avgShortageHours"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["numberOfTimesLateToOffice"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["numberOfTimesMinimumHoursMissed"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["maxPoints"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["pointsScored"]))
-                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["avgEfforts"]))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalWorkingDays"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalLeaves"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalAbsents"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalDaysAttended"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalUpdatesSent"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalWorkingHours"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["totalWorkedHours"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["avgWorkingHours"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["avgWorkingHours"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["avgShortageHours"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["numberOfTimesLateToOffice"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["numberOfTimesMinimumHoursMissed"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["maxPoints"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["pointsScored"]!))
+                self.attendanceSumDetails.append(String(describing: dicStoreAttendance["percScored"]!))
                 
+               ForAttendanceStore.attendanceDict = dStore[170] as! [String : Any]
+            
                 ForAttendanceStore.attendanceSummaryDetailsArr = self.attendanceSumDetails
                 print(self.attendanceSumDetails)
+                
+                ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["attendanceDayCount"]!)
+                ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["attendanceDay"]!)
+                ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["checkIn"]!)
+                ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["checkOut"]!)
+                ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["timeSpent"]!)
+                ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["shortageExcessTime"]!)
+                ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["totalPoints"]!)
+                
+                ForAttendanceStore.forStatusDict=ForAttendanceStore.attendanceDict["dailyActivityUpdate"] as! [String : String]
+                
+//                self.attendanceTV?.delegate = self
+//                self.attendanceTV?.dataSource = self
+                //self.attendanceTV?.reloadData()
                 //print(self.allStore![0])
             }catch{
                 
                 print("Something gone wrong")
             }
         })
-        
-        dataTask?.resume()
         do_table_refresh()
+        dataTask?.resume()
+        
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        tableView.rowHeight = 80.00
+        tableView.rowHeight = 65.00
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "abc", for: indexPath) as! AttendanceCell
         
         cell.frame.size.width = UIScreen.main.bounds.size.width
-        DispatchQueue.main.async {
-        //let  some:String? = ForAttendanceStore.attendanceSummaryDetailsArr[0]
         cell.subMenuLabel?.text = self.subMArr[indexPath.row]
-       // cell.dataFromSerLBL?.text = self.attendanceSumDetails[indexPath.row]
-          
+        cell.dataFromSerLBL?.text = self.attendanceSumDetails[indexPath.row]
         print("For Atten Class Store\(self.attendanceSumDetails)")
         print("sM.count\(self.subMArr.count)")
-       // print("atte.count\(attendanceSumDetails.count)")
-        }
+        
+        
         return cell
         
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
-               
-        print("For Atten Class Store\(ForAttendanceStore.attendanceSummaryDetailsArr)")
+        
+        let lateThread = DispatchQueue(label: "late",qos: .utility)
+        lateThread.async {
+            
+            self.tableViewElements()
+        }
+        
+        //print("For Atten Class Store\(ForAttendanceStore.attendanceSummaryDetailsArr)")
     }
     
     func do_table_refresh()
     {
-        DispatchQueue.main.async(execute: {
+        DispatchQueue.main.async {
             self.attendanceTV.reloadData()
-            return
-        })
+            
+        }
     }
+    
     
 }
 

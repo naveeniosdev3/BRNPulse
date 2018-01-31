@@ -16,7 +16,7 @@ class ParentViewController: UIViewController {
         
         var vc = storyBoard.instantiateViewController(withIdentifier: "HomeScreenVC") as! ViewController
         
-        self.addViewControllerAsChildViewController(childViewControllerContaining(vc))
+       // self.addViewControllerAsChildViewController(childViewControllerContaining(vc))
         
         return vc
     }()
@@ -27,7 +27,7 @@ class ParentViewController: UIViewController {
         
         var ss = storyBoard.instantiateViewController(withIdentifier: "status") as! DailyStatusUpdatae
         
-        self.addViewControllerAsChildViewController(childViewControllerContaining(ss))
+   //     self.addViewControllerAsChildViewController(childViewControllerContaining(ss))
         
         return ss
     }()

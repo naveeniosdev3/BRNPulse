@@ -48,6 +48,10 @@
 		DD752C29201EE8BB00E4F8A2 /* updateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DD752C1C201EE8BB00E4F8A2 /* updateIcon.png */; };
 		DD752C2E201EEE5B00E4F8A2 /* StatusNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD752C2D201EEE5B00E4F8A2 /* StatusNavigation.swift */; };
 		DD752C32201EF4AD00E4F8A2 /* HomeScreenNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD752C31201EF4AD00E4F8A2 /* HomeScreenNavigation.swift */; };
+		DDC7F0CB2021D28D00ED41F7 /* AttendanceFullDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC7F0CA2021D28D00ED41F7 /* AttendanceFullDetailsVC.swift */; };
+		DDC7F0D62021E2A900ED41F7 /* StaticMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC7F0D42021E2A900ED41F7 /* StaticMenuCell.swift */; };
+		DDC7F0D72021E2A900ED41F7 /* StaticMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC7F0D52021E2A900ED41F7 /* StaticMenuCell.xib */; };
+		DDC7F0DD2022090E00ED41F7 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC7F0DC2022090E00ED41F7 /* StatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +98,10 @@
 		DD752C1C201EE8BB00E4F8A2 /* updateIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = updateIcon.png; sourceTree = "<group>"; };
 		DD752C2D201EEE5B00E4F8A2 /* StatusNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNavigation.swift; sourceTree = "<group>"; };
 		DD752C31201EF4AD00E4F8A2 /* HomeScreenNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenNavigation.swift; sourceTree = "<group>"; };
+		DDC7F0CA2021D28D00ED41F7 /* AttendanceFullDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceFullDetailsVC.swift; sourceTree = "<group>"; };
+		DDC7F0D42021E2A900ED41F7 /* StaticMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMenuCell.swift; sourceTree = "<group>"; };
+		DDC7F0D52021E2A900ED41F7 /* StaticMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticMenuCell.xib; sourceTree = "<group>"; };
+		DDC7F0DC2022090E00ED41F7 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,10 @@
 				DD0CB0AB20137AB900908A9F /* Main.storyboard */,
 				DD752C06201EE77900E4F8A2 /* SignInVC.swift */,
 				DD752C08201EE7A400E4F8A2 /* DailyStatusUpdatae.swift */,
+				DDC7F0CA2021D28D00ED41F7 /* AttendanceFullDetailsVC.swift */,
+				DDC7F0DC2022090E00ED41F7 /* StatusView.swift */,
+				DDC7F0D42021E2A900ED41F7 /* StaticMenuCell.swift */,
+				DDC7F0D52021E2A900ED41F7 /* StaticMenuCell.xib */,
 				DD752C2C201EE93F00E4F8A2 /* Model */,
 				DD0CB0AE20137AB900908A9F /* Assets.xcassets */,
 				DD752C2D201EEE5B00E4F8A2 /* StatusNavigation.swift */,
@@ -271,6 +283,7 @@
 				DD752C25201EE8BB00E4F8A2 /* logo.png in Resources */,
 				DD752C1E201EE8BB00E4F8A2 /* icons8-customer-40 (1).png in Resources */,
 				DD752C29201EE8BB00E4F8A2 /* updateIcon.png in Resources */,
+				DDC7F0D72021E2A900ED41F7 /* StaticMenuCell.xib in Resources */,
 				DD752C20201EE8BB00E4F8A2 /* icons8-delete-30.png in Resources */,
 				DD68BF0920203FB900D1B240 /* sign-up.png in Resources */,
 				DD0CB0AD20137AB900908A9F /* Main.storyboard in Resources */,
@@ -286,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0CB0AA20137AB900908A9F /* ViewController.swift in Sources */,
+				DDC7F0CB2021D28D00ED41F7 /* AttendanceFullDetailsVC.swift in Sources */,
 				DD752C0B201EE7B200E4F8A2 /* DataStore.swift in Sources */,
 				DD752C05201EE74800E4F8A2 /* MenuSlider.swift in Sources */,
 				DD3C4DC5201F340300E11FB6 /* AttendanceCell.swift in Sources */,
@@ -294,7 +308,9 @@
 				DD752C09201EE7A400E4F8A2 /* DailyStatusUpdatae.swift in Sources */,
 				DD752C32201EF4AD00E4F8A2 /* HomeScreenNavigation.swift in Sources */,
 				DD1E04102020C12A00946831 /* ParentViewController.swift in Sources */,
+				DDC7F0DD2022090E00ED41F7 /* StatusView.swift in Sources */,
 				DD0CB0A820137AB900908A9F /* AppDelegate.swift in Sources */,
+				DDC7F0D62021E2A900ED41F7 /* StaticMenuCell.swift in Sources */,
 				DD752C0F201EE7E600E4F8A2 /* FloatingTextField.swift in Sources */,
 				DD1E040820208FBB00946831 /* ForAttendanceStore.swift in Sources */,
 				DD752C2E201EEE5B00E4F8A2 /* StatusNavigation.swift in Sources */,

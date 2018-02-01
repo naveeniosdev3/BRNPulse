@@ -24,9 +24,12 @@ class CustomCollectionViewCell: UICollectionViewCell {
         stautusViewButton.layer.masksToBounds = true
     }
 
-    @IBAction func statusButtonTapEvent(_ sender: Any) {
-        
-        print("From Status View Button >>>>>\(ForAttendanceStore.indexRowFromDataBaseVC)<<<<<<")
-    }
+//    @IBAction func statusButtonTapEvent(_ sender: Any) {
+//        
+//        let statusObj = AttendanceFullDetailsVC()
+//        
+//        statusObj.toStatusView()
+//    
+//    }
     
 }

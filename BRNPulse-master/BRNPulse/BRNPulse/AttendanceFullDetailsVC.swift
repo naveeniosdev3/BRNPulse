@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var staticTableView: UITableView!
     
@@ -19,13 +19,18 @@ class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //staticTableView?.dataSource = self
         print("From Full Attendance \(ForAttendanceStore.attendanceDict)")
         
         let staticCellXib = UINib(nibName: "StaticMenuCell", bundle: nil)
         staticTableView.register(staticCellXib, forCellReuseIdentifier: "abcd")
         
+        ForAttendanceStore.fullAttendanceDetails.remove(at: 0)
         
+        print(ForAttendanceStore.fullAttendanceDetails)
+    //ForAttendanceStore.fullAttendanceDetails = dStore
+       
+
         
     }
 
@@ -34,7 +39,7 @@ class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewD
         
         
             
-            return ForAttendanceStore.fullAttendanceDetails.count-1
+            return ForAttendanceStore.fullAttendanceDetails.count
         
         
     }
@@ -42,43 +47,35 @@ class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         tableView.rowHeight = 500.00
-        
+//        print(ForAttendanceStore.fullDictByIndex)
+//        print(ForAttendanceStore.fullDictByIndex["attendanceDate"]!)
 
             
         let cell1 = self.staticTableView.dequeueReusableCell(withIdentifier: "abcd", for: indexPath) as! StaticMenuCell
         
-        print(ForAttendanceStore.valueStoreArr)
-           // cell1.staticMenuDetailsLBL?.text = menuText[indexPath.row]
-//        if indexPath.row == 7{
-//            cell1.detailAttendanceLabel?.text = ""
-//            let buttonForStatus = UIButton(type: .custom)
-//            buttonForStatus.frame = CGRect(x: cell1.detailAttendanceLabel.frame.origin.x, y: 20, width: 90, height: 45)
-//            buttonForStatus.setTitle("Status", for: .normal)
-//            buttonForStatus.setTitleColor(UIColor.green, for: .normal)
-//            buttonForStatus.addTarget(self, action: #selector(statusDisplay), for: .touchUpInside)
-//            //buttonForStatus.backgroundColor = UIColor.darkGray
-//            cell1.addSubview(buttonForStatus)
-//        }else{
+            print(ForAttendanceStore.valueStoreArr)
+            ForAttendanceStore.indexRowFromDataBaseVC = UInt16(indexPath.row)
         
-        ForAttendanceStore.indexRowFromDataBaseVC = UInt16(indexPath.row)
+        ForAttendanceStore.fullDictByIndex = ForAttendanceStore.fullAttendanceDetails[indexPath.row] as! [String : Any]
+        print(ForAttendanceStore.fullDictByIndex)
+        print(ForAttendanceStore.fullDictByIndex["attendanceDate"]!)
+        ForAttendanceStore.attendanceDate = ForAttendanceStore.fullDictByIndex["attendanceDate"]! as! String
+        ForAttendanceStore.attendanceDay = ForAttendanceStore.fullDictByIndex["attendanceDay"]! as! String
+        ForAttendanceStore.extraHours = ForAttendanceStore.fullDictByIndex["shortageExcessTime"]! as! String
+
+        ForAttendanceStore.checkIn = ForAttendanceStore.fullDictByIndex["checkIn"]! as! String
+
+        ForAttendanceStore.checkOut = ForAttendanceStore.fullDictByIndex["checkOut"]! as! String
+
+        ForAttendanceStore.timeSpent = ForAttendanceStore.fullDictByIndex["timeSpent"]! as! String
+        //ForAttendanceStore.totalPoints = ForAttendanceStore.fullDictByIndex["totalPoints"]! as! String
+
+    
         
-            //cell1.detailAttendanceLabel?.text = ForAttendanceStore.valueStoreArr[indexPath.row] as? String
-            //cell1.detailAttendanceLabel?.text = ForAttendanceStore.valueStoreArr[indexPath.row] as? String
-   // }
-       // print("Total Table Veiw Cells ------>>\(indexPath.row)<<--------")
         return cell1
             
             
     }
    
     
-    func statusDisplay(){
-        
-        var statusViewObj = StatusView()
-         statusViewObj = self.storyboard?.instantiateViewController(withIdentifier: "statusView") as! StatusView
-        
-        present(statusViewObj, animated: true, completion: nil)
-        
-        
-    }
 }

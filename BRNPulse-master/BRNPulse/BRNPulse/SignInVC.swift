@@ -31,10 +31,10 @@ class SignInVC: UIViewController {
     
     func buttonModify(){
         
-        logInButton.layer.cornerRadius = 20.00
+        logInButton.layer.cornerRadius = 24.00
         logInButton.layer.masksToBounds = true
         
-        signUpButton.layer.cornerRadius = 20.00
+        signUpButton.layer.cornerRadius = 24.00
         signUpButton.layer.masksToBounds = true
     }
     
@@ -99,6 +99,13 @@ class SignInVC: UIViewController {
             }catch{
                 
                 print("Something gone wrong")
+                let alertControllerForError = UIAlertController(title: "Error", message: "Not Communicated with Server/No Internet", preferredStyle: .actionSheet)
+                
+                let alertAct = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertControllerForError.addAction(alertAct)
+                
+                self.present(alertControllerForError, animated: true, completion: nil)
+                
             }
         })
         dataTask?.resume()

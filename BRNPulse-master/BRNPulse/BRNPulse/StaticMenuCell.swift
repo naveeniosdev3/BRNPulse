@@ -15,15 +15,16 @@ class StaticMenuCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewD
     @IBOutlet weak var collectionViewRow: UICollectionView!
     @IBOutlet weak var detailAttendanceLabel: UILabel!
     let menuText = ["Days Count","Day","CheckIn","Check Out","Time Spent","Spent Summery","Points Earned","Status"]
+    
+    var arrStore = [Any]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        if ForAttendanceStore.indexRowFromDataBaseVC > 0{
-            
-            storeMainDict = ForAttendanceStore.fullAttendanceDetails[Int(ForAttendanceStore.indexRowFromDataBaseVC)] as! [String : Any]
-            
-        }
+        
+        
+       
         
         collectionViewRow.delegate = self
         collectionViewRow.dataSource =  self
@@ -48,39 +49,60 @@ class StaticMenuCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-            //print("From Main Dict>>>>>>>............\(storeMainDict)")
         
-        for (key, value) in storeMainDict {
             
-            if key == "dailyActivityUpdate" {
-
-                print(value)
-//                if value == 1 {
-//                    
-//                     print("NO Status")
-//                    
-//                }else{
-//                    
-//                    print("Yes Status")
-//                }
         
-            }
-        }
         
         let cellItem = collectionViewRow.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath)   as! CustomCollectionViewCell
         cellItem.frame.size.width = self.bounds.size.width
         cellItem.frame.size.height = 60.00
         cellItem.menuItemsLabel?.text = menuText[indexPath.row]
         
-        if indexPath.row == 7{
+        print(ForAttendanceStore.indexRowFromDataBaseVC)
         
+        
+        
+        if indexPath.row == 0{
+            
+            //print("from Arr Store\(arrStore)")
+            cellItem.valueAttenLabel.isHidden = false
+            cellItem.valueAttenLabel?.text = ForAttendanceStore.attendanceDate
+            
+            
+        }else if indexPath.row == 1{
+            
+            cellItem.valueAttenLabel.isHidden = false
+            cellItem.valueAttenLabel?.text = ForAttendanceStore.attendanceDay
+        }else if indexPath.row == 2{
+            
+            cellItem.valueAttenLabel.isHidden = false
+            cellItem.valueAttenLabel?.text = ForAttendanceStore.checkIn
+        }else if indexPath.row == 3{
+            
+            cellItem.valueAttenLabel.isHidden = false
+            cellItem.valueAttenLabel?.text = ForAttendanceStore.checkOut
+        }else if indexPath.row == 4{
+            
+            cellItem.valueAttenLabel.isHidden = false
+            cellItem.valueAttenLabel?.text = ForAttendanceStore.timeSpent
+        }else if indexPath.row == 5{
+            
+            cellItem.valueAttenLabel.isHidden = false
+            cellItem.valueAttenLabel?.text = ForAttendanceStore.extraHours
+        }else if indexPath.row == 6{
+            
+            cellItem.valueAttenLabel.isHidden = false
+            cellItem.valueAttenLabel?.text =  String(ForAttendanceStore.totalPoints)
+        }        else if indexPath.row == 7{
+            
             cellItem.stautusViewButton.isHidden = false
             cellItem.valueAttenLabel.isHidden = true
-        }else{
-            cellItem.valueAttenLabel.isHidden = false
-            cellItem.valueAttenLabel?.text = "MCA"
-        }
+            
+            }
+        
         return cellItem
     }
     
+
+            
 }

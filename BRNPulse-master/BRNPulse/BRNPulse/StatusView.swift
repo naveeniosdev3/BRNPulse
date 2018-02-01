@@ -37,21 +37,21 @@ class StatusView: UIViewController {
             arr.append("\(key) \(value)")
         }
         
-        nineToTenLBL?.text = arr[0]
-        tenToLeven?.text = arr[1]
-        elevenToTwelve?.text = arr[2]
+//        nineToTenLBL?.text = arr[0]
+//        tenToLeven?.text = arr[1]
+//        elevenToTwelve?.text = arr[2]
         
-//        nineToTenLBL?.text = "id some thing aefjdsjf enidjfdsej jdfejk ejfkje3ej ejejrejjekljewj"
-//        //nineToTenLBL?.text = ForAttendanceStore.forStatusDict["nineToTen"]
-//        tenToLeven?.text = ForAttendanceStore.forStatusDict["tenToEleven"]
-//        elevenToTwelve?.text = ForAttendanceStore.forStatusDict["elevenToTwelve"]
-//        twoToThree?.text = ForAttendanceStore.forStatusDict["twelveToOne"]
-//        twelveToOne?.text = ForAttendanceStore.forStatusDict["oneToTwo"]
-//        oneToTwo?.text = ForAttendanceStore.forStatusDict["twoToThree"]
-//        threeToFour?.text = ForAttendanceStore.forStatusDict["threeToFour"]
-//        fourToFive?.text = ForAttendanceStore.forStatusDict["fourToFive"]
-//        fiveToSix?.text = ForAttendanceStore.forStatusDict["fiveToSix"]
-//        sixAfter?.text = ForAttendanceStore.forStatusDict["sixAndAbove"]
+        nineToTenLBL?.text = "id some thing aefjdsjf enidjfdsej jdfejk ejfkje3ej ejejrejjekljewj"
+        //nineToTenLBL?.text = ForAttendanceStore.forStatusDict["nineToTen"]
+        tenToLeven?.text = ForAttendanceStore.forStatusDict["tenToEleven"]
+        elevenToTwelve?.text = ForAttendanceStore.forStatusDict["elevenToTwelve"]
+        twoToThree?.text = ForAttendanceStore.forStatusDict["twelveToOne"]
+        twelveToOne?.text = ForAttendanceStore.forStatusDict["oneToTwo"]
+        oneToTwo?.text = ForAttendanceStore.forStatusDict["twoToThree"]
+        threeToFour?.text = ForAttendanceStore.forStatusDict["threeToFour"]
+        fourToFive?.text = ForAttendanceStore.forStatusDict["fourToFive"]
+        fiveToSix?.text = ForAttendanceStore.forStatusDict["fiveToSix"]
+        sixAfter?.text = ForAttendanceStore.forStatusDict["sixAndAbove"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +63,7 @@ class StatusView: UIViewController {
     func modifyScrollView(){
         
         scrollViewStatus.layer.borderWidth = 2.0
-        scrollViewStatus.layer.cornerRadius = 10.0
+        scrollViewStatus.layer.cornerRadius = 15.0
         scrollViewStatus.layer.masksToBounds = true
        // scrollViewStatus.layer.borderColor = (UIColor.lightGray as! CGColor)
     }

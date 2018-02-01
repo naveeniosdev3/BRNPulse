@@ -19,6 +19,8 @@
 		DD1E04102020C12A00946831 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E040F2020C12A00946831 /* ParentViewController.swift */; };
 		DD3C4DC5201F340300E11FB6 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */; };
 		DD3C4DC6201F340300E11FB6 /* AttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */; };
+		DD45DE112022E05E00A6AC3B /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45DE0F2022E05E00A6AC3B /* CustomCollectionViewCell.swift */; };
+		DD45DE122022E05E00A6AC3B /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD45DE102022E05E00A6AC3B /* CustomCollectionViewCell.xib */; };
 		DD68BF0520203E9300D1B240 /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = DD68BF0320203E9300D1B240 /* signUp.png */; };
 		DD68BF0620203E9300D1B240 /* signUpText.png in Resources */ = {isa = PBXBuildFile; fileRef = DD68BF0420203E9300D1B240 /* signUpText.png */; };
 		DD68BF0920203FB900D1B240 /* sign-up.png in Resources */ = {isa = PBXBuildFile; fileRef = DD68BF0720203FB900D1B240 /* sign-up.png */; };
@@ -69,6 +71,8 @@
 		DD1E040F2020C12A00946831 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
 		DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceCell.xib; sourceTree = "<group>"; };
+		DD45DE0F2022E05E00A6AC3B /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD45DE102022E05E00A6AC3B /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		DD68BF0320203E9300D1B240 /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
 		DD68BF0420203E9300D1B240 /* signUpText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUpText.png; sourceTree = "<group>"; };
 		DD68BF0720203FB900D1B240 /* sign-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-up.png"; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				DDC7F0DC2022090E00ED41F7 /* StatusView.swift */,
 				DDC7F0D42021E2A900ED41F7 /* StaticMenuCell.swift */,
 				DDC7F0D52021E2A900ED41F7 /* StaticMenuCell.xib */,
+				DD45DE0F2022E05E00A6AC3B /* CustomCollectionViewCell.swift */,
+				DD45DE102022E05E00A6AC3B /* CustomCollectionViewCell.xib */,
 				DD752C2C201EE93F00E4F8A2 /* Model */,
 				DD0CB0AE20137AB900908A9F /* Assets.xcassets */,
 				DD752C2D201EEE5B00E4F8A2 /* StatusNavigation.swift */,
@@ -272,6 +278,7 @@
 				DD752C1D201EE8BB00E4F8A2 /* homeIcon.png in Resources */,
 				DD68BF0A20203FB900D1B240 /* signup1.png in Resources */,
 				DD1E040A2020B80800946831 /* pexels-photo.jpg in Resources */,
+				DD45DE122022E05E00A6AC3B /* CustomCollectionViewCell.xib in Resources */,
 				DD1E040E2020B88A00946831 /* pexels-photo-303383.jpeg in Resources */,
 				DD752C26201EE8BB00E4F8A2 /* requestIcon.png in Resources */,
 				DD752C21201EE8BB00E4F8A2 /* icons8-menu-30.png in Resources */,
@@ -306,6 +313,7 @@
 				DD752C07201EE77900E4F8A2 /* SignInVC.swift in Sources */,
 				DD752C0D201EE7D100E4F8A2 /* CustomeTextField.swift in Sources */,
 				DD752C09201EE7A400E4F8A2 /* DailyStatusUpdatae.swift in Sources */,
+				DD45DE112022E05E00A6AC3B /* CustomCollectionViewCell.swift in Sources */,
 				DD752C32201EF4AD00E4F8A2 /* HomeScreenNavigation.swift in Sources */,
 				DD1E04102020C12A00946831 /* ParentViewController.swift in Sources */,
 				DDC7F0DD2022090E00ED41F7 /* StatusView.swift in Sources */,

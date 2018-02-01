@@ -15,7 +15,7 @@ class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewD
     
    //@IBOutlet weak var scrollableTableView: UITableView!
     
-    let menuText = ["Days Count","Day","CheckIn","Check Out","Time Spent","Spent Summery","Points Earned","Status"]
+    let menuText = ["Days Count","Day","CheckIn","Check Out","Time Spent","Spent Summery","Points Earned"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,42 +34,38 @@ class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewD
         
         
             
-            return menuText.count
+            return ForAttendanceStore.fullAttendanceDetails.count-1
         
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        tableView.rowHeight = 80.00
+        tableView.rowHeight = 500.00
         
 
             
-            let cell1 = self.staticTableView.dequeueReusableCell(withIdentifier: "abcd", for: indexPath) as! StaticMenuCell
-        
-        //var valueStoreArr = [Any]()
-        
-        
-        //valueStoreArr.append(ForAttendanceStore.attendanceDict["attendanceDayCount"]!)
-        //valueStoreArr.append(ForAttendanceStore.attendanceDict["attendanceDayCount"]!)
+        let cell1 = self.staticTableView.dequeueReusableCell(withIdentifier: "abcd", for: indexPath) as! StaticMenuCell
         
         print(ForAttendanceStore.valueStoreArr)
-            cell1.staticMenuDetailsLBL?.text = menuText[indexPath.row]
-        if indexPath.row == 7{
-            cell1.detailAttendanceLabel?.text = ""
-            let buttonForStatus = UIButton(type: .custom)
-            buttonForStatus.frame = CGRect(x: cell1.detailAttendanceLabel.frame.origin.x, y: 20, width: 90, height: 45)
-            buttonForStatus.setTitle("Status", for: .normal)
-            buttonForStatus.setTitleColor(UIColor.green, for: .normal)
-            buttonForStatus.addTarget(self, action: #selector(statusDisplay), for: .touchUpInside)
-            //buttonForStatus.backgroundColor = UIColor.darkGray
-            cell1.addSubview(buttonForStatus)
-        }else{
-            
+           // cell1.staticMenuDetailsLBL?.text = menuText[indexPath.row]
+//        if indexPath.row == 7{
+//            cell1.detailAttendanceLabel?.text = ""
+//            let buttonForStatus = UIButton(type: .custom)
+//            buttonForStatus.frame = CGRect(x: cell1.detailAttendanceLabel.frame.origin.x, y: 20, width: 90, height: 45)
+//            buttonForStatus.setTitle("Status", for: .normal)
+//            buttonForStatus.setTitleColor(UIColor.green, for: .normal)
+//            buttonForStatus.addTarget(self, action: #selector(statusDisplay), for: .touchUpInside)
+//            //buttonForStatus.backgroundColor = UIColor.darkGray
+//            cell1.addSubview(buttonForStatus)
+//        }else{
+        
+        ForAttendanceStore.indexRowFromDataBaseVC = UInt16(indexPath.row)
+        
             //cell1.detailAttendanceLabel?.text = ForAttendanceStore.valueStoreArr[indexPath.row] as? String
-            cell1.detailAttendanceLabel?.text = ForAttendanceStore.valueStoreArr[indexPath.row] as? String
-    }
-    
+            //cell1.detailAttendanceLabel?.text = ForAttendanceStore.valueStoreArr[indexPath.row] as? String
+   // }
+       // print("Total Table Veiw Cells ------>>\(indexPath.row)<<--------")
         return cell1
             
             

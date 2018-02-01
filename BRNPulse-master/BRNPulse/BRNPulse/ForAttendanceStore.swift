@@ -12,6 +12,8 @@ class ForAttendanceStore{
     static var attendanceSummaryDetailsArr = Array<String>()
     static var attendanceDict:Dictionary = [String:Any]()
     static var valueStoreArr = [Any]()
-    
     static var forStatusDict:Dictionary = [String:String]()
+    static var fullAttendanceDetails = [Any]()
+    
+    static var indexRowFromDataBaseVC = UInt16()
 }

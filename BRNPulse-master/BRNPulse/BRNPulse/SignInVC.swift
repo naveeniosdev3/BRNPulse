@@ -13,17 +13,29 @@ class SignInVC: UIViewController {
     @IBOutlet weak var passwordTF: ACFloatingTextfield!
     @IBOutlet weak var userNameTF: ACFloatingTextfield!
     
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton!
     var logKnow = String()
     
     var reqURL:URLRequest?
+    @IBOutlet weak var loadActiveIndicator: UIActivityIndicatorView!
     var sessionURL : URLSession?
     var dataTask : URLSessionDataTask?
     var allStore : [String:String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonModify()
+        self.loadActiveIndicator.isHidden = true
+    }
+    
+    func buttonModify(){
         
-        // Do any additional setup after loading the view.
+        logInButton.layer.cornerRadius = 20.00
+        logInButton.layer.masksToBounds = true
+        
+        signUpButton.layer.cornerRadius = 20.00
+        signUpButton.layer.masksToBounds = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +46,9 @@ class SignInVC: UIViewController {
     @IBAction func signUpEvent(_ sender: Any) {
         
 //        let multi = DispatchQueue(label: "one",qos:.userInitiated)
-//        multi.async {
+//          multi.async {
+        self.loadActiveIndicator.isHidden = false
+        self.loadActiveIndicator.startAnimating()
         
             self.dataGettingFromServer()
             print(self.logKnow)
@@ -44,6 +58,8 @@ class SignInVC: UIViewController {
 
         }else{
             
+            self.loadActiveIndicator.isHidden = false
+            self.loadActiveIndicator.startAnimating()
             print("Not Logged In")
             //self.loadAttendanceDetails()
         }
@@ -77,7 +93,8 @@ class SignInVC: UIViewController {
                 print(self.allStore!)
                 
                 self.logKnow = (self.allStore?["loggedIn"])!
-                
+                self.loadActiveIndicator.isHidden = true
+                self.loadActiveIndicator.startAnimating()
                 
             }catch{
                 

@@ -16,7 +16,7 @@ class ParentViewController: UIViewController {
         
         var vc = storyBoard.instantiateViewController(withIdentifier: "HomeScreenVC") as! ViewController
         
-       // self.addViewControllerAsChildViewController(childViewControllerContaining(vc))
+        self.addViewControllerAsChildViewController(childViewController: vc)
         
         return vc
     }()
@@ -27,14 +27,14 @@ class ParentViewController: UIViewController {
         
         var ss = storyBoard.instantiateViewController(withIdentifier: "status") as! DailyStatusUpdatae
         
-   //     self.addViewControllerAsChildViewController(childViewControllerContaining(ss))
+   self.addViewControllerAsChildViewController(childViewController: ss)
         
         return ss
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpView()
         
     }
 

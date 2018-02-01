@@ -544,6 +544,7 @@
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016 © BRN Infotech Pvt. Ltd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAh-Qg-VcM">
                                                         <rect key="frame" x="45" y="456" width="230" height="20"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="230" id="gHy-Ji-oEN"/>
                                                             <constraint firstAttribute="height" constant="20" id="vFC-JH-vNc"/>
@@ -735,13 +736,19 @@
                                                         <constraint firstAttribute="height" constant="70" id="tpp-77-G6G"/>
                                                     </constraints>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="t7E-dL-Qe0">
+                                                    <rect key="frame" x="142" y="221.5" width="37" height="37"/>
+                                                    <color key="color" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.8966449058219178" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="PZW-G3-pQT" firstAttribute="centerX" secondItem="1mV-7U-eAf" secondAttribute="centerX" id="9fb-CD-mZo"/>
+                                                <constraint firstItem="t7E-dL-Qe0" firstAttribute="centerX" secondItem="1mV-7U-eAf" secondAttribute="centerX" id="CPT-sL-03f"/>
                                                 <constraint firstItem="Diq-QA-nfQ" firstAttribute="centerX" secondItem="1mV-7U-eAf" secondAttribute="centerX" id="I23-cQ-Qt4"/>
                                                 <constraint firstItem="Diq-QA-nfQ" firstAttribute="width" secondItem="1mV-7U-eAf" secondAttribute="width" multiplier="1:1.5" id="Pj8-Bs-OAZ"/>
                                                 <constraint firstItem="13Y-0n-TnG" firstAttribute="centerX" secondItem="1mV-7U-eAf" secondAttribute="centerX" id="Pr1-vc-A2e"/>
+                                                <constraint firstItem="t7E-dL-Qe0" firstAttribute="centerY" secondItem="1mV-7U-eAf" secondAttribute="centerY" id="PrQ-7G-8bs"/>
                                                 <constraint firstItem="PZW-G3-pQT" firstAttribute="top" secondItem="Diq-QA-nfQ" secondAttribute="bottom" constant="10" id="ciJ-Wv-gmi"/>
                                                 <constraint firstItem="13Y-0n-TnG" firstAttribute="top" secondItem="PZW-G3-pQT" secondAttribute="bottom" constant="10" id="yKb-rQ-K4S"/>
                                             </constraints>
@@ -773,7 +780,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadActiveIndicator" destination="t7E-dL-Qe0" id="ScO-B4-mUO"/>
+                        <outlet property="logInButton" destination="cHG-jy-QAJ" id="EFC-Om-ul4"/>
                         <outlet property="passwordTF" destination="UFw-iP-iQ3" id="5AJ-mh-c05"/>
+                        <outlet property="signUpButton" destination="1mD-jf-Fzp" id="rDP-UL-YP4"/>
                         <outlet property="userNameTF" destination="OfS-uc-80M" id="Lki-xa-qz7"/>
                         <segue destination="jdB-76-9e9" kind="show" identifier="toHome" id="BgZ-Dm-l10"/>
                     </connections>

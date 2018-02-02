@@ -19,11 +19,5 @@ class ForAttendanceStore{
     
     static var indexRowFromDataBaseVC = UInt16()
     
-    static var attendanceDate = String()
-    static var attendanceDay = String()
-    static var checkIn = String()
-    static var checkOut = String()
-    static var timeSpent = String()
-    static var extraHours = String()
-    static var totalPoints = UInt8()
+    
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var loadActiveIndicator: UIActivityIndicatorView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBOutlet weak var attendanceTV: UITableView!
@@ -30,14 +31,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.loadAttendanceDetails()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGestureMethod(sender:)))
         self.view.addGestureRecognizer(panGesture)
-            
+        self.loadActiveIndicator.isHidden = false
+        self.loadActiveIndicator.startAnimating()
+        //self.tableViewElements()
         }
     
     func tableViewElements(){
         
         self.attendanceTV?.delegate = self
         self.attendanceTV?.dataSource = self
-        //attendanceTV.register(AttendanceCell(), forCellReuseIdentifier: "abc")
         let attendanceCellxib = UINib(nibName: "AttendanceCell", bundle: nil)
         attendanceTV.register(attendanceCellxib, forCellReuseIdentifier: "abc")
         self.attendanceTV.reloadData()
@@ -163,11 +165,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 //print(dataResult["totalWorkingDays"])
                 self.allStore = dataResult as! [Any]
                 let dicStoreAttendance:Dictionary = dStore[0] as![String:Any]
-                print("\n-----------------------------------")
-                print("Frome Data Store : \(dStore[1])")
-                print("\n-----------------------------------")
+//                print("\n-----------------------------------")
+//                print("Frome Data Store : \(dStore[1])")
+//                print("\n-----------------------------------")
                 //print(dStore)
-                ForAttendanceStore.fullAttendanceDetails = dStore
+                var someWhileStore = dStore
+                someWhileStore.remove(at: 0)
+                
+                ForAttendanceStore.fullAttendanceDetails = someWhileStore.reversed()
                 let some1:[String:Any] = dStore[1] as! [String : Any]
                 
                 print("All Keys:----->>>>\(some1.keys)")
@@ -204,18 +209,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["shortageExcessTime"]!)
                 ForAttendanceStore.valueStoreArr.append(ForAttendanceStore.attendanceDict["totalPoints"]!)
                 
-                ForAttendanceStore.forStatusDict=ForAttendanceStore.attendanceDict["dailyActivityUpdate"] as! [String : String]
-                
-//                self.attendanceTV?.delegate = self
-//                self.attendanceTV?.dataSource = self
-                //self.attendanceTV?.reloadData()
-                //print(self.allStore![0])
-            }catch{
+                }catch{
                 
                 print("Something gone wrong")
             }
+            DispatchQueue.main.async {
+                
+                self.attendanceTV.reloadData()
+                self.loadActiveIndicator.isHidden = true
+                self.loadActiveIndicator.stopAnimating()
+            }
         })
-        do_table_refresh()
+        
         dataTask?.resume()
         
         
@@ -229,7 +234,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         cell.frame.size.width = UIScreen.main.bounds.size.width
         cell.subMenuLabel?.text = self.subMArr[indexPath.row]
+        if self.attendanceSumDetails.count == 0{
+            
+            print("Loading Please Wait.....")
+        }else{
         cell.dataFromSerLBL?.text = self.attendanceSumDetails[indexPath.row]
+        }
         print("For Atten Class Store\(self.attendanceSumDetails)")
         print("sM.count\(self.subMArr.count)")
         

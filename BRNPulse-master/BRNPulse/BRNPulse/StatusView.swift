@@ -10,6 +10,8 @@ import UIKit
 
 class StatusView: UIViewController {
 
+    @IBOutlet weak var statusDate: UILabel!
+    @IBOutlet weak var statusDay: UILabel!
     @IBOutlet weak var scrollViewStatus: UIScrollView!
     
     @IBOutlet weak var nineToTenLBL: UILabel!
@@ -28,21 +30,12 @@ class StatusView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         modifyScrollView()
-       // self.view.backgroundColor = UIColor.clear
+        print("8686290686")
         print("Status is :\(ForAttendanceStore.forStatusDict)")
-    
-        var arr = [String]()
         
-        for (key, value) in ForAttendanceStore.forStatusDict {
-            arr.append("\(key) \(value)")
-        }
-        
-//        nineToTenLBL?.text = arr[0]
-//        tenToLeven?.text = arr[1]
-//        elevenToTwelve?.text = arr[2]
-        
-        nineToTenLBL?.text = "id some thing aefjdsjf enidjfdsej jdfejk ejfkje3ej ejejrejjekljewj"
-        //nineToTenLBL?.text = ForAttendanceStore.forStatusDict["nineToTen"]
+        statusDay?.text = ForAttendanceStore.fullDictByIndex["attendanceDay"] as? String
+        statusDate?.text = ForAttendanceStore.fullDictByIndex["attendanceDate"] as? String
+        nineToTenLBL?.text = ForAttendanceStore.forStatusDict["nineToTen"]
         tenToLeven?.text = ForAttendanceStore.forStatusDict["tenToEleven"]
         elevenToTwelve?.text = ForAttendanceStore.forStatusDict["elevenToTwelve"]
         twoToThree?.text = ForAttendanceStore.forStatusDict["twelveToOne"]
@@ -51,10 +44,12 @@ class StatusView: UIViewController {
         threeToFour?.text = ForAttendanceStore.forStatusDict["threeToFour"]
         fourToFive?.text = ForAttendanceStore.forStatusDict["fourToFive"]
         fiveToSix?.text = ForAttendanceStore.forStatusDict["fiveToSix"]
+        
         sixAfter?.text = ForAttendanceStore.forStatusDict["sixAndAbove"]
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

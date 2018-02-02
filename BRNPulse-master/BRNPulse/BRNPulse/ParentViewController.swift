@@ -10,6 +10,8 @@ import UIKit
 
 class ParentViewController: UIViewController {
 
+    var some = true
+    var slideMenu = menuSlider()
     lazy var homeScreen : ViewController = {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -65,4 +67,72 @@ class ParentViewController: UIViewController {
         childViewController.view.autoresizingMask = [.flexibleWidth , .flexibleHeight]
         childViewController.didMove(toParentViewController: self)
     }
+    
+    @IBAction func menuButtonTapEvent(_ sender: UIBarButtonItem) {
+        
+        if some == true{
+            
+            openMenu()
+            
+        }else if some == false{
+            closeMenu()
+            
+        }
+        
+    }
+    
+    func openMenu(){
+        
+        UIView.animate(withDuration: 1) { ()->Void in
+            
+            self.slideMenu.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            //           self.view.frame = CGRect(x: (self.slideMenu?.view.frame.size.width)!-50, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            
+            
+            self.some = false
+            self.addChildViewController(self.slideMenu)
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            self.view.addSubview(self.slideMenu.view)
+            //self.view.bringSubview(toFront: self.slideMenu!.view)
+            
+            
+        }
+        
+    }
+    func closeMenu(){
+        
+        UIView.animate(withDuration: 1, animations: { ()->Void in
+            
+            self.slideMenu.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            // self.view.frame = CGRect(x: 0, y: 60, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }) {(finished) in
+            self.slideMenu.view.removeFromSuperview()
+            
+        }
+        
+        
+        //        ///
+        //        UIView.animate(withDuration: 0.3,animation { ()->Void in
+        //
+        //            self.slideMenu?.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 60, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        //            self.slideMenu.view.removeFromSuperview()
+        //
+        //
+        //        }
+        self.some = true
+    }
+    
+    
+    @IBAction func swipeRight(_ sender: Any) {
+        
+        openMenu()
+    }
+    
+    
+    @IBAction func swipeLeft(_ sender: Any) {
+        
+        closeMenu()
+    }
+
 }

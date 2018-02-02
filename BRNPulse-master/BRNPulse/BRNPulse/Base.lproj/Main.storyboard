@@ -26,11 +26,17 @@
                                 <rect key="frame" x="0.0" y="-1" width="320" height="481"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-Z2-6eh">
+                                <rect key="frame" x="142" y="222" width="37" height="37"/>
+                                <color key="color" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="xnl-Z2-6eh" firstAttribute="centerX" secondItem="a3r-Rj-AZ5" secondAttribute="centerX" id="EkW-aA-d4p"/>
                             <constraint firstItem="fYb-AF-Txm" firstAttribute="top" secondItem="3lN-ub-nnt" secondAttribute="bottom" constant="-65" id="Ggn-jj-S75"/>
+                            <constraint firstItem="xnl-Z2-6eh" firstAttribute="centerY" secondItem="a3r-Rj-AZ5" secondAttribute="centerY" id="OqD-dR-dhW"/>
                             <constraint firstItem="cYM-0J-cwJ" firstAttribute="top" secondItem="fYb-AF-Txm" secondAttribute="bottom" id="bIR-5Q-V6v"/>
                             <constraint firstItem="fYb-AF-Txm" firstAttribute="leading" secondItem="a3r-Rj-AZ5" secondAttribute="leading" id="fwP-tO-efZ"/>
                             <constraint firstAttribute="trailing" secondItem="fYb-AF-Txm" secondAttribute="trailing" id="mdE-ZJ-Hwb"/>
@@ -54,6 +60,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="attendanceTV" destination="fYb-AF-Txm" id="KEg-cx-8Xh"/>
+                        <outlet property="loadActiveIndicator" destination="xnl-Z2-6eh" id="ZS6-9f-ODo"/>
                         <outlet property="menuButton" destination="2bH-ec-mkv" id="MTA-OD-KLg"/>
                     </connections>
                 </viewController>
@@ -198,14 +205,34 @@
                                     <constraint firstItem="Fku-Fh-2is" firstAttribute="width" secondItem="Rew-c9-3UA" secondAttribute="width" constant="-15" id="tsi-cf-keW"/>
                                 </constraints>
                             </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RTy-cI-X8h">
+                                <rect key="frame" x="35" y="14.5" width="250" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9S-Sw-4dJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.49397786458333331" green="0.89618598090277779" blue="0.97954644097222221" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HV1-cC-dwt">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.49397786458333331" green="0.89618598090277779" blue="0.97954644097222221" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="0.59182363013698636" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Rew-c9-3UA" firstAttribute="width" secondItem="P6x-if-3u0" secondAttribute="width" constant="-70" id="8c8-wO-Ifk"/>
                             <constraint firstItem="Rew-c9-3UA" firstAttribute="height" secondItem="P6x-if-3u0" secondAttribute="height" constant="-70" id="CUt-sC-9hC"/>
+                            <constraint firstItem="Rew-c9-3UA" firstAttribute="top" secondItem="RTy-cI-X8h" secondAttribute="bottom" id="CdK-t0-Dwq"/>
+                            <constraint firstItem="RTy-cI-X8h" firstAttribute="width" secondItem="Rew-c9-3UA" secondAttribute="width" id="H8P-8v-Zdw"/>
                             <constraint firstItem="Rew-c9-3UA" firstAttribute="centerY" secondItem="P6x-if-3u0" secondAttribute="centerY" id="Rbe-A6-md2"/>
                             <constraint firstItem="Rew-c9-3UA" firstAttribute="centerX" secondItem="P6x-if-3u0" secondAttribute="centerX" id="UMc-Ic-P32"/>
+                            <constraint firstItem="RTy-cI-X8h" firstAttribute="centerX" secondItem="P6x-if-3u0" secondAttribute="centerX" id="Uf8-hK-H0Z"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="C9K-mY-16k" appends="YES" id="Mcf-da-U7z"/>
@@ -219,6 +246,8 @@
                         <outlet property="oneToTwo" destination="Ayn-Mv-18I" id="ehL-B8-g1K"/>
                         <outlet property="scrollViewStatus" destination="Rew-c9-3UA" id="uEM-zd-pRw"/>
                         <outlet property="sixAfter" destination="hus-U2-fu0" id="06c-dr-Yi7"/>
+                        <outlet property="statusDate" destination="HV1-cC-dwt" id="laH-ds-BnX"/>
+                        <outlet property="statusDay" destination="D9S-Sw-4dJ" id="fFI-B0-k2a"/>
                         <outlet property="tenToLeven" destination="eFJ-l4-9cY" id="Lfd-UC-if0"/>
                         <outlet property="threeToFour" destination="slV-L2-ka1" id="CPH-es-y5y"/>
                         <outlet property="twelveToOne" destination="J2F-go-sia" id="bnK-xD-4Vm"/>
@@ -232,7 +261,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1790.625" y="292.5"/>
+            <point key="canvasLocation" x="1798" y="309"/>
         </scene>
         <!--Parent View Controller-->
         <scene sceneID="zKG-8l-NE8">
@@ -250,7 +279,7 @@
                     <navigationItem key="navigationItem" id="J4h-e6-jwV">
                         <barButtonItem key="leftBarButtonItem" image="icons8-menu-30.png" id="PEH-ur-a0T">
                             <connections>
-                                <action selector="onMenuButtonTapEvent:" destination="c7g-Ke-b4V" id="sxq-aa-q5A"/>
+                                <action selector="menuButtonTapEvent:" destination="c7g-Ke-b4V" id="4Q7-i9-RFr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -868,7 +897,7 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNK-XN-T2L">
                                 <rect key="frame" x="0.0" y="197.5" width="220" height="282.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FjY-s6-Clq">
-                                    <rect key="frame" x="0.0" y="0.0" width="220" height="282.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="220" height="283"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cPl-t8-bvc">

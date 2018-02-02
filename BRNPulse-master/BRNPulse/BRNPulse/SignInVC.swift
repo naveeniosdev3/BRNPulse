@@ -45,24 +45,22 @@ class SignInVC: UIViewController {
     
     @IBAction func signUpEvent(_ sender: Any) {
         
-//        let multi = DispatchQueue(label: "one",qos:.userInitiated)
-//          multi.async {
+
         self.loadActiveIndicator.isHidden = false
         self.loadActiveIndicator.startAnimating()
         
             self.dataGettingFromServer()
-            print(self.logKnow)
-        //}
-        if self.logKnow == "yes"{
-        performSegue(withIdentifier: "toHome", sender: self)
-
-        }else{
-            
-            self.loadActiveIndicator.isHidden = false
-            self.loadActiveIndicator.startAnimating()
-            print("Not Logged In")
-            //self.loadAttendanceDetails()
-        }
+//            print(self.logKnow)
+//        if self.logKnow == "yes"{
+//        
+//
+//        }else{
+//            
+//            self.loadActiveIndicator.isHidden = false
+//            self.loadActiveIndicator.startAnimating()
+//            print("Not Logged In")
+//            //self.loadAttendanceDetails()
+//        }
     }
     func dataGettingFromServer(){
         
@@ -79,23 +77,48 @@ class SignInVC: UIViewController {
         dataTask = sessionURL?.dataTask(with: reqURL!, completionHandler: { (data, response, error) in
             print(data!)
             do{
-                let dataResult = try JSONSerialization.jsonObject(with: data!, options:[])
-                //print(dataResult)
-                
-                self.allStore = dataResult as? [String : String]
-                
-                DataStore .dStore(data: (self.allStore?["firstName"])!)
-                DataStore .dStore(data: (self.allStore?["studentID"])!)
-                DataStore .dStore(data: (self.allStore?["profileImagePath"])!)
-                DataStore.dStore(data: (self.allStore?["batchID"])!)
-                DataStore.dStore(data: (self.allStore?["surName"])!)
-                //print(self.sName!)
-                print(self.allStore!)
-                
-                self.logKnow = (self.allStore?["loggedIn"])!
-                self.loadActiveIndicator.isHidden = true
-                self.loadActiveIndicator.startAnimating()
-                
+                let dataResult = try JSONSerialization.jsonObject(with: data!, options:[]) as! [String:Any]
+                print(dataResult)
+                let logIn  = dataResult["loggedIn"] as! String
+               
+                let threatForServerDict = DispatchQueue(label: "server",qos: .userInitiated)
+                threatForServerDict.async{
+                if( logIn == "no"){
+                    
+                print("Not Logged in")
+                    print("Something gone wrong")
+                    DispatchQueue.main.async{
+                    let alertControllerForError = UIAlertController(title: "Error", message: dataResult["msg"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    let alertAct = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                    alertControllerForError.addAction(alertAct)
+                    
+                    self.present(alertControllerForError, animated: true, completion: nil)
+                        self.loadActiveIndicator.isHidden = true
+                        self.loadActiveIndicator.stopAnimating()
+                    }
+               
+                }else{
+                    
+                   
+                    self.allStore = dataResult as? [String : String]
+                        print(self.allStore!)
+                    DataStore .dStore(data: (self.allStore?["firstName"])!)
+                    DataStore .dStore(data: (self.allStore?["studentID"])!)
+                    DataStore .dStore(data: (self.allStore?["profileImagePath"])!)
+                    DataStore.dStore(data: (self.allStore?["batchID"])!)
+                    DataStore.dStore(data: (self.allStore?["surName"])!)
+                    //print(self.sName!)
+                    print(self.allStore!)
+                    
+                    self.logKnow = (self.allStore?["loggedIn"])!
+                    self.loadActiveIndicator.isHidden = true
+                    self.loadActiveIndicator.startAnimating()
+                    DispatchQueue.main.async{
+                    self.performSegue(withIdentifier: "toHome", sender: self)
+                    }
+                }
+                }
             }catch{
                 
                 print("Something gone wrong")
@@ -106,7 +129,7 @@ class SignInVC: UIViewController {
                 
                 self.present(alertControllerForError, animated: true, completion: nil)
                 
-            }
+                }
         })
         dataTask?.resume()
         

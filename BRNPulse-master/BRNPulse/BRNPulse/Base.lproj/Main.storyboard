@@ -47,11 +47,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Attendance Summery" id="Jeb-Co-28w">
-                        <barButtonItem key="leftBarButtonItem" image="icons8-menu-30.png" id="2bH-ec-mkv">
-                            <connections>
-                                <action selector="menuButtonTapEvent:" destination="87g-cX-i7J" id="Eri-VX-R23"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="icons8-menu-30.png" id="2bH-ec-mkv"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="3Gh-my-D1U">
                             <connections>
                                 <segue destination="Jrv-Yx-T9B" kind="show" id="pCA-KL-Yx4"/>

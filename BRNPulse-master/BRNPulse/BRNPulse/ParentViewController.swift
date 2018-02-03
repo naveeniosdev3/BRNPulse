@@ -11,14 +11,14 @@ import UIKit
 class ParentViewController: UIViewController {
 
     var some = true
-    var slideMenu = menuSlider()
-    lazy var homeScreen : ViewController = {
+    var slideMenu : menuSlider!
+    lazy var homeScreen : menuSlider = {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        var vc = storyBoard.instantiateViewController(withIdentifier: "HomeScreenVC") as! ViewController
+        var vc = storyBoard.instantiateViewController(withIdentifier: "menuSlider") as! menuSlider
         
-        self.addViewControllerAsChildViewController(childViewController: vc)
+        //self.addViewControllerAsChildViewController(childViewController: vc)
         
         return vc
     }()
@@ -29,14 +29,14 @@ class ParentViewController: UIViewController {
         
         var ss = storyBoard.instantiateViewController(withIdentifier: "status") as! DailyStatusUpdatae
         
-   self.addViewControllerAsChildViewController(childViewController: ss)
+   //self.addViewControllerAsChildViewController(childViewController: ss)
         
         return ss
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpView()
+        //setUpView()
         
     }
 
@@ -49,6 +49,12 @@ class ParentViewController: UIViewController {
     private func setUpView()
     {
         
+        view.addSubview(homeScreen.view)
+        homeScreen.view.frame = view.bounds
+        homeScreen.view.autoresizingMask = [.flexibleWidth , .flexibleHeight]
+        homeScreen.didMove(toParentViewController: self)
+
+        
     }
     
     private func updateView()
@@ -60,18 +66,18 @@ class ParentViewController: UIViewController {
     }
     
     
-    private func addViewControllerAsChildViewController(childViewController: UIViewController){
-        
-        view.addSubview(childViewController.view)
-        childViewController.view.frame = view.bounds
-        childViewController.view.autoresizingMask = [.flexibleWidth , .flexibleHeight]
-        childViewController.didMove(toParentViewController: self)
-    }
+//    private func addViewControllerAsChildViewController(childViewController: UIViewController){
+//        
+//        view.addSubview(childViewController.view)
+//        childViewController.view.frame = view.bounds
+//        childViewController.view.autoresizingMask = [.flexibleWidth , .flexibleHeight]
+//        childViewController.didMove(toParentViewController: self)
+//    }
     
     @IBAction func menuButtonTapEvent(_ sender: UIBarButtonItem) {
         
         if some == true{
-            
+            setUpView()
             openMenu()
             
         }else if some == false{
@@ -85,16 +91,20 @@ class ParentViewController: UIViewController {
         
         UIView.animate(withDuration: 1) { ()->Void in
             
-            self.slideMenu.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-            //           self.view.frame = CGRect(x: (self.slideMenu?.view.frame.size.width)!-50, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-            
-            
-            self.some = false
-            self.addChildViewController(self.slideMenu)
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-            self.view.addSubview(self.slideMenu.view)
+//            self.slideMenu!.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+//            //           self.view.frame = CGRect(x: (self.slideMenu?.view.frame.size.width)!-50, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+//            
+//            
+//            self.some = false
+//            self.addChildViewController(self.slideMenu)
+//            self.navigationController?.setNavigationBarHidden(true, animated: true)
+//            self.view.addSubview(self.slideMenu.view)
             //self.view.bringSubview(toFront: self.slideMenu!.view)
-            
+//            view.addSubview(homeScreen.view)
+//            homeScreen.view.frame = view.bounds
+//            homeScreen.view.autoresizingMask = [.flexibleWidth , .flexibleHeight]
+//            homeScreen.didMove(toParentViewController: self)
+
             
         }
         

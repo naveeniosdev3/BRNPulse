@@ -32,30 +32,30 @@ class menuSlider: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        profileUpdate()
+       // profileUpdate()
     }
     
-    func profileUpdate(){
-        print(DataStore.allData)
-        let imageURL = "http://www.brninfotech.com/pulse/modules"
-        let comingURL:NSString = DataStore.allData[2] as! NSString
-        
-        let modifiedURL = comingURL.replacingOccurrences(of: "..", with: imageURL)
-        
-        let imageFullURL = URL(string: modifiedURL)
-        
-        print(modifiedURL)
-        let imageDataNS : NSData = NSData(contentsOf: imageFullURL!)!
-        profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
-        profileImageView.layer.masksToBounds = true
-        
-        let fullName = String(format: "%@ %@",(DataStore.allData[0] as? String)!,(DataStore.allData[4] as? String)! )
-        
-        batchID?.text = DataStore.allData[3] as? String
-        studentID?.text = DataStore.allData[1] as? String
-        studentNameLBL?.text = fullName
-        profileImageView?.image = UIImage(data: imageDataNS as Data)
-    }
+//    func profileUpdate(){
+//        print(DataStore.allData)
+//        let imageURL = "http://www.brninfotech.com/pulse/modules"
+//        let comingURL:NSString = DataStore.allData[2] as! NSString
+//        
+//        let modifiedURL = comingURL.replacingOccurrences(of: "..", with: imageURL)
+//        
+//        let imageFullURL = URL(string: modifiedURL)
+//        
+//        print(modifiedURL)
+//        let imageDataNS : NSData = NSData(contentsOf: imageFullURL!)!
+//        profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
+//        profileImageView.layer.masksToBounds = true
+//        
+//        let fullName = String(format: "%@ %@",(DataStore.allData[0] as? String)!,(DataStore.allData[4] as? String)! )
+//        
+//        batchID?.text = DataStore.allData[3] as? String
+//        studentID?.text = DataStore.allData[1] as? String
+//        studentNameLBL?.text = fullName
+//        profileImageView?.image = UIImage(data: imageDataNS as Data)
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

@@ -75,7 +75,7 @@ class SignInVC: UIViewController {
         let dataToServer = "funcName=verifyLogin&registeredEmail="+userNameTF.text!+"&registeredPassword="+passwordTF.text!+""
         reqURL?.httpBody = dataToServer.data(using: .utf8)
         dataTask = sessionURL?.dataTask(with: reqURL!, completionHandler: { (data, response, error) in
-            print(data!)
+            //print(data!)
             do{
                 let dataResult = try JSONSerialization.jsonObject(with: data!, options:[]) as! [String:Any]
                 print(dataResult)

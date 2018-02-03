@@ -55,7 +55,7 @@ class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewD
         //cell1.arrStore.removeAll()
             print(ForAttendanceStore.valueStoreArr)
             ForAttendanceStore.indexRowFromDataBaseVC = UInt16(indexPath.row)
-    
+        //let oneDecArr:[String:Any] = ForAttendanceStore.fullAttendanceDetails[indexPath.row-1] as! [String : Any]
         ForAttendanceStore.fullDictByIndex = ForAttendanceStore.fullAttendanceDetails[indexPath.row] as! [String : Any]
        // print(ForAttendanceStore.fullDictByIndex)
         print(ForAttendanceStore.fullDictByIndex["attendanceDay"]!)

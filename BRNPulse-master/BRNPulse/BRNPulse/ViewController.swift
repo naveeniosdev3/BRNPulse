@@ -159,16 +159,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             print(data!)
             do{
                 let dataResult = try JSONSerialization.jsonObject(with: data!, options:[])
-                print("FromDataStore \(dataResult)")
+                //print("FromDataStore \(dataResult)")
                 // self.allStore = dataResult as! [String : String]
                let dStore = dataResult as! [Any]
                 //print(dataResult["totalWorkingDays"])
                 self.allStore = dataResult as! [Any]
                 let dicStoreAttendance:Dictionary = dStore[0] as![String:Any]
-//                print("\n-----------------------------------")
-//                print("Frome Data Store : \(dStore[1])")
-//                print("\n-----------------------------------")
-                //print(dStore)
                 var someWhileStore = dStore
                 someWhileStore.remove(at: 0)
                 

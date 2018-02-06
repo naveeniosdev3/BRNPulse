@@ -47,7 +47,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Attendance Summery" id="Jeb-Co-28w">
-                        <barButtonItem key="leftBarButtonItem" image="icons8-menu-30.png" id="2bH-ec-mkv"/>
+                        <barButtonItem key="leftBarButtonItem" image="icons8-menu-30.png" id="2bH-ec-mkv">
+                            <connections>
+                                <action selector="menuButtonTapEvent:" destination="87g-cX-i7J" id="xCF-dE-pYF"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="3Gh-my-D1U">
                             <connections>
                                 <segue destination="Jrv-Yx-T9B" kind="show" id="pCA-KL-Yx4"/>
@@ -893,7 +897,7 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNK-XN-T2L">
                                 <rect key="frame" x="0.0" y="197.5" width="220" height="282.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FjY-s6-Clq">
-                                    <rect key="frame" x="0.0" y="0.0" width="220" height="283"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="220" height="282.5"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cPl-t8-bvc">

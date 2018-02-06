@@ -13,8 +13,6 @@
 		DD0CB0AF20137AB900908A9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0CB0AE20137AB900908A9F /* Assets.xcassets */; };
 		DD0CB0B220137AB900908A9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0CB0B020137AB900908A9F /* LaunchScreen.storyboard */; };
 		DD1E040820208FBB00946831 /* ForAttendanceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E040720208FBB00946831 /* ForAttendanceStore.swift */; };
-		DD1E040A2020B80800946831 /* pexels-photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E04092020B80800946831 /* pexels-photo.jpg */; };
-		DD1E040C2020B81000946831 /* pexels-photo-399161.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E040B2020B81000946831 /* pexels-photo-399161.jpeg */; };
 		DD1E040E2020B88A00946831 /* pexels-photo-303383.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DD1E040D2020B88A00946831 /* pexels-photo-303383.jpeg */; };
 		DD1E04102020C12A00946831 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E040F2020C12A00946831 /* ParentViewController.swift */; };
 		DD3C4DC5201F340300E11FB6 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */; };
@@ -64,8 +62,6 @@
 		DD0CB0B120137AB900908A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD0CB0B320137AB900908A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD1E040720208FBB00946831 /* ForAttendanceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForAttendanceStore.swift; sourceTree = "<group>"; };
-		DD1E04092020B80800946831 /* pexels-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo.jpg"; sourceTree = "<group>"; };
-		DD1E040B2020B81000946831 /* pexels-photo-399161.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo-399161.jpeg"; sourceTree = "<group>"; };
 		DD1E040D2020B88A00946831 /* pexels-photo-303383.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo-303383.jpeg"; sourceTree = "<group>"; };
 		DD1E040F2020C12A00946831 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
@@ -147,7 +143,6 @@
 				DDC7F0D42021E2A900ED41F7 /* StaticMenuCell.swift */,
 				DDC7F0D52021E2A900ED41F7 /* StaticMenuCell.xib */,
 				DDC7F0DC2022090E00ED41F7 /* StatusView.swift */,
-				DD675A13202459570073593A /* CustomLabel.swift */,
 				DD752C2C201EE93F00E4F8A2 /* Model */,
 				DD0CB0AE20137AB900908A9F /* Assets.xcassets */,
 				DD752C2D201EEE5B00E4F8A2 /* StatusNavigation.swift */,
@@ -155,12 +150,11 @@
 				DD3C4DC3201F340300E11FB6 /* AttendanceCell.swift */,
 				DD3C4DC4201F340300E11FB6 /* AttendanceCell.xib */,
 				DD752C2A201EE8FF00E4F8A2 /* TextFieldsCustom */,
+				DD675A13202459570073593A /* CustomLabel.swift */,
 				DD68BF112020489C00D1B240 /* eICon1.png */,
 				DD1E040D2020B88A00946831 /* pexels-photo-303383.jpeg */,
 				DD68BF0B2020445B00D1B240 /* passwordIcon.png */,
 				DD752C10201EE8BB00E4F8A2 /* homeIcon.png */,
-				DD1E04092020B80800946831 /* pexels-photo.jpg */,
-				DD1E040B2020B81000946831 /* pexels-photo-399161.jpeg */,
 				DD68BF0C2020445B00D1B240 /* emailIcon.png */,
 				DD752C11201EE8BB00E4F8A2 /* icons8-customer-40 (1).png */,
 				DD68BF0720203FB900D1B240 /* sign-up.png */,
@@ -264,7 +258,6 @@
 			files = (
 				DD0CB0B220137AB900908A9F /* LaunchScreen.storyboard in Resources */,
 				DD752C23201EE8BB00E4F8A2 /* login.png in Resources */,
-				DD1E040C2020B81000946831 /* pexels-photo-399161.jpeg in Resources */,
 				DD752C1F201EE8BB00E4F8A2 /* icons8-customer-40.png in Resources */,
 				DD68BF102020484800D1B240 /* emailIcon1.png in Resources */,
 				DD68BF0D2020445B00D1B240 /* passwordIcon.png in Resources */,
@@ -274,7 +267,6 @@
 				DD68BF122020489C00D1B240 /* eICon1.png in Resources */,
 				DD752C1D201EE8BB00E4F8A2 /* homeIcon.png in Resources */,
 				DD68BF0A20203FB900D1B240 /* signup1.png in Resources */,
-				DD1E040A2020B80800946831 /* pexels-photo.jpg in Resources */,
 				DD1E040E2020B88A00946831 /* pexels-photo-303383.jpeg in Resources */,
 				DD752C26201EE8BB00E4F8A2 /* requestIcon.png in Resources */,
 				DD752C21201EE8BB00E4F8A2 /* icons8-menu-30.png in Resources */,

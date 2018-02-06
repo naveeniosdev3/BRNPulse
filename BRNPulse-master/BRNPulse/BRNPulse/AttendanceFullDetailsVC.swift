@@ -46,7 +46,7 @@ class AttendanceFullDetailsVC: UIViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        tableView.rowHeight = self.view.frame.size.height + 100
+        tableView.rowHeight = 600.00
 //        print(ForAttendanceStore.fullDictByIndex)
 //        print(ForAttendanceStore.fullDictByIndex["attendanceDate"]!)
 
